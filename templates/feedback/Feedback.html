@@ -1,0 +1,836 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+        <div class="d-flex">
+            <div class="p-2">
+                <i class="fas fa-comment-dots fa-5x"></i>
+            </div>
+            <div class="p-2 flex-grow-1">
+                <h1 style="text-align:center;padding-top: 5px;padding-bottom: 0px;">Feedback</h1>
+            </div>
+        </div>
+        {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+    </div>
+</head>
+<body>
+<div class="container">
+
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="nav-item">
+            <a href="#sectionA" class="nav-link active" data-toggle="tab">Student A</a>
+        </li>
+        <li class="nav-item">
+            <a href="#sectionB" class="nav-link" data-toggle="tab">Student B</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade show active">
+            <h3 style="text-align: center;">Student Number</h3>
+            
+            <input id="AstudentNumber" class="studentNumberInput" type="hidden"/>
+            <div class="jpa studentA">
+                <input type="tel" class="form-control studentA"  maxlength="1">
+                <input type="tel" class="form-control studentA"  maxlength="1">
+                <input type="tel" class="form-control studentA" maxlength="1">
+                <input type="tel" class="form-control studentA" maxlength="1">
+                <input type="tel" class="form-control studentA" maxlength="1">
+                <input type="tel" class="form-control studentA" maxlength="1">
+                <input type="tel" class="form-control studentA" maxlength="1">
+              </div>
+            <div class="alert alert-info">Required field </div>
+            <hr>
+            <h3 style="text-align: center;">Presentation Skills</h3>
+
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Ametric1" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric1value" class="font-weight-bold text-primary ml-2 mt-1"></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Ametric1Check">
+                        <label class="form-check-label" for="Ametric1Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Technical Understanding</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Ametric2" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric2value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Ametric2Check">
+                        <label class="form-check-label" for="Ametric2Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Discussion</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Ametric3" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric3value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Ametric3Check">
+                        <label class="form-check-label" for="Ametric3Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Professionalism</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Ametric4" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric4value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Ametric4Check">
+                        <label class="form-check-label" for="Ametric4Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Comments</h3>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>Outstanding Features</th>
+                    <td>
+                        <textarea id="APositiveComment" class="form-control" rows="5"
+                                  placeholder="Type in your comment..."></textarea>
+                        <div class="alert alert-info">Required field </div>                                  
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Development Areas</th>
+                    <td>
+                        <textarea id="ANegativeComment" class="form-control" rows="5"
+                                  placeholder="Type in your comment..."></textarea>
+                        <div class="alert alert-info">Required field </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <hr>
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+            <!-- STUDENT B FORM STARTS HERE -->
+            <h3 style="text-align: center;">Student Number</h3>
+            <input id="BstudentNumber" class="studentNumberInput" type="hidden"/>
+            <div class="jpa studentB">
+                <input type="tel" class="form-control"  maxlength="1">
+                <input type="tel" class="form-control"  maxlength="1">
+                <input type="tel" class="form-control" maxlength="1">
+                <input type="tel" class="form-control" maxlength="1">
+                <input type="tel" class="form-control" maxlength="1">
+                <input type="tel" class="form-control" maxlength="1">
+                <input type="tel" class="form-control" maxlength="1">
+              </div>
+            <div class="alert alert-info">Required field </div>
+            <hr>
+            <h3 style="text-align: center;">Presentation skills</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Bmetric1" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric1value" class="font-weight-bold text-primary ml-2 mt-1"></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Bmetric1Check">
+                        <label class="form-check-label" for="Bmetric1Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Technical Understanding</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Bmetric2" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric2value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Bmetric2Check">
+                        <label class="form-check-label" for="Bmetric2Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Discussion</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Bmetric3" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric3value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Bmetric3Check">
+                        <label class="form-check-label" for="Bmetric3Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Professionalism</h3>
+
+            <div class="d-flex justify-content-center sliderNumber">
+                <div class="p-2">
+                    <form class="range-field">
+                        <input id="Bmetric4" class="border-0" type="range" min="1" max="4"/>
+                    </form>
+
+                </div>
+
+                <div class="p-2">
+                    <span id="metric4value" class="font-weight-bold text-primary ml-2 mt-1 "></span>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input uncertain" id="Bmetric4Check">
+                        <label class="form-check-label" for="Bmetric4Check">Uncertain</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <h3 style="text-align: center;">Comments</h3>
+            <br>
+            <table class="table">
+                <tr>
+                    <th>Outstanding Features</th>
+                    <td>
+                        <textarea id="BPositiveComment" class="form-control" rows="5"
+                                  placeholder="Type in your comment..."></textarea>
+                        <div class="alert alert-info">Required field </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Development Areas</th>
+                    <td>
+                        <textarea id="BNegativeComment" class="form-control" rows="5"
+                                  placeholder="Type in your comment..."></textarea>
+                        <div class="alert alert-info">Required field </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-center sliderNumber">
+    <div class="p-2">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="confirm">
+            <label class="form-check-label text-center" for="confirm">Confirm feedback submission for Student A and
+                B</label>
+        </div>
+    </div>
+    <div class="p-2">
+        <button id="submit" class="btn btn-info" disabled="true">Submit All</button>
+    </div>
+</div>
+</div>
+<style>
+    .alert{
+        margin: 1em;
+    }
+</style>
+</body>
+{% include 'menu/footer.html' %}
+
+<!-- Code is from https://github.com/fkranenburg/bootstrap-pincode-input-->
+<!-- <link href="{{ url_for('static', filename = 'pincode.css') }}" rel="stylesheet">
+<script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'pincode.js') }}" ></script>
+<script> -->
+<!-- https://www.jqueryscript.net/plus/search.php?keyword=smitdesai16 -->
+    <link href="{{ url_for('static', filename = 'jquery-pincode-autotab.css') }}" rel="stylesheet">
+<script type = "text/javascript" 
+         src = "{{ url_for('static', filename = 'jquery-pincode-autotab.js') }}" ></script>
+<script>
+
+    // /feedback/submission
+    $(document).ready(function () {
+
+        // $('#AstudentNumber').pincodeInput({inputs:7,hidedigits:false, change: function(e){
+        //     //Remove alert from screen
+        //     $('#studentAError').remove();
+            
+        //     if ($('#AstudentNumber').val().toString().length == 7){
+        //         $('#AstudentNumber').after(`<div id="studentAError" class="alert alert-success">Student number is in correct format.</div>`);
+        //     }else{
+        //         $('#AstudentNumber').after(`<div id="studentAError" class="alert alert-danger">Student number invalid. Please input all 7 digits of student number.</div>`);
+        //     }
+        // }});
+
+        // $('#BstudentNumber').pincodeInput({inputs:7,hidedigits:false,change:function(e){
+        //         //Remove alert from screen
+        //         $('#studentBError').remove();
+            
+        //         if ($('#BstudentNumber').val().toString().length == 7){
+        //             $('#BstudentNumber').after(`<div id="studentBError" class="alert alert-success">Student number is in correct format.</div>`);
+        //         }else{
+        //             $('#BstudentNumber').after(`<div id="studentBError" class="alert alert-danger">Student number invalid. Please input all 7 digits of student number.</div>`);
+        //         }
+        //     }});
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+            return false;
+        };
+
+        
+
+        $(".studentA input").jqueryPincodeAutotab();
+        $(".studentB input").jqueryPincodeAutotab();
+
+        //Clear all student number boxes
+        $(".jpa input").each(function(){
+            $(this).val("");
+        });
+
+        $("#AstudentNumber").val("");
+        $("#BstudentNumber").val("");
+
+        let prefill_student_A = getUrlParameter("StudentA")
+        let prefill_student_B = getUrlParameter("StudentB")
+
+        if(prefill_student_A != false){
+            let error = false;
+
+            if(isNaN(prefill_student_A)){
+                error = true
+            }
+
+            //Validate student number
+            if (prefill_student_A.length != 7){
+                error = true
+            }
+
+            if(error == false){
+                let digits = prefill_student_A.toString().split('');
+                $("div.studentA:first").find("input").each(function(index){
+                    $(this).val(digits[index])
+
+                    if(index == 0){
+                        $(this).parent().after(`<div id="studentAError" class="alert alert-success studentNumberMessage">Student number is in correct format.</div>`);
+                    }
+                })
+
+                $("#AstudentNumber").val(prefill_student_A);
+
+            }
+        }
+
+        if(prefill_student_B != false){
+            let error = false;
+
+            if(isNaN(prefill_student_B)){
+                error = true
+            }
+
+            //Validate student number
+            if (prefill_student_B.length != 7){
+                error = true
+            }
+
+            if(error == false){
+                let digits = prefill_student_B.toString().split('');
+                $("div.studentB:first").find("input").each(function(index){
+                    $(this).val(digits[index])
+
+                    if(index == 0){
+                        $(this).parent().after(`<div id="studentBError" class="alert alert-success studentNumberMessage">Student number is in correct format.</div>`);
+                    }
+                })
+
+                $("#BstudentNumber").val(prefill_student_B);
+
+            }
+        }
+
+        $(".jpa input").keydown(function(){
+             //Remove error
+             $(this).parent().parent().find(".studentNumberMessage").eq(0).remove();
+            
+            //Create student number
+            let studentNumber = ""
+            $(this).parent().find("input").each(function(){
+                studentNumber = studentNumber + $(this).val()
+            })
+
+            let error = false;
+
+            if(isNaN(studentNumber)){
+                error = true
+            }
+
+            //Validate student number
+            if (studentNumber.length != 7){
+                error = true
+            }
+
+            if(error == true){
+                $(this).parent().after(`<div id="studentBError" class="alert alert-danger studentNumberMessage">Student number invalid. Please input all 7 digits of student number.</div>`);
+            }else{
+                $(this).parent().after(`<div id="studentBError" class="alert alert-success studentNumberMessage">Student number is in correct format.</div>`);
+            }
+
+            
+
+            //Set to student to hidden input
+            $(this).parent().parent().find(".studentNumberInput").eq(0).val(studentNumber)
+        })
+
+        $(".jpa input").keyup(function(){
+             //Remove error
+             $(this).parent().parent().find(".studentNumberMessage").eq(0).remove();
+            
+            //Create student number
+            let studentNumber = ""
+            $(this).parent().find("input").each(function(){
+                studentNumber = studentNumber + $(this).val()
+            })
+
+            let error = false;
+
+            if(isNaN(studentNumber)){
+                error = true
+            }
+
+            //Validate student number
+            if (studentNumber.length != 7){
+                error = true
+            }
+
+            if(error == true){
+                $(this).parent().after(`<div id="studentBError" class="alert alert-danger studentNumberMessage">Student number invalid. Please input all 7 digits of student number.</div>`);
+            }else{
+                $(this).parent().after(`<div id="studentBError" class="alert alert-success studentNumberMessage">Student number is in correct format.</div>`);
+            }
+
+            
+
+            //Set to student to hidden input
+            $(this).parent().parent().find(".studentNumberInput").eq(0).val(studentNumber)
+        })
+
+        $(".jpa input").on("paste", function(event){
+            //Remove error
+            $(this).parent().parent().find(".studentNumberMessage").eq(0).remove();
+            
+            //Create student number
+            let studentNumber = ""
+            $(this).parent().find("input").each(function(){
+                studentNumber = studentNumber + $(this).val()
+            })
+
+            let error = false;
+
+            if(isNaN(studentNumber)){
+                error = true
+            }
+
+            //Validate student number
+            if (studentNumber.length != 7){
+                error = true
+            }
+
+            if(error == true){
+                $(this).parent().after(`<div id="studentBError" class="alert alert-danger studentNumberMessage">Student number invalid. Please input all 7 digits of student number.</div>`);
+            }else{
+                $(this).parent().after(`<div id="studentBError" class="alert alert-success studentNumberMessage">Student number is in correct format.</div>`);
+            }
+
+            
+
+            //Set to student to hidden input
+            $(this).parent().parent().find(".studentNumberInput").eq(0).val(studentNumber)
+        })
+
+        const metricOutcome = [
+            "Uncertain",
+            "Very Bad",
+            "Bad",
+            "Good",
+            "Very Good"
+        ]
+
+        document.getElementById("confirm").checked = false;
+
+        $("#confirm").click(function () {
+            if ($(this).is(":checked")) {
+                $("#submit").removeAttr("disabled")
+            } else {
+                $("#submit").attr("disabled", true)
+            }
+        })
+
+        $(".sliderNumber").each(function () {
+            let metric = $(this).find("div").eq(0).find("input").eq(0)
+            let displayMetric = $(this).find("div").eq(1).find("span").eq(0)
+
+
+            //Display current value of slider
+            $(displayMetric).html(metricOutcome[$(metric).val()]);
+
+            $(metric).attr("val", $(metric).val());
+
+            //Listerner for the metric
+            $(metric).on('input change', () => {
+                if ($(metric).attr("val") != "0") {
+                    $(metric).attr("val", $(metric).val());
+                }
+
+                //Update display number of slider
+                $(displayMetric).html(metricOutcome[$(metric).val()]);
+
+            });
+
+
+            if ($(displayMetric).parent().find("input").first().is(":checked")) {
+                $(displayMetric).parent().find("input").first().click()
+            }
+
+        });
+
+        //Handle the uncertain checkbox behaviour
+        $(".uncertain").click(function () {
+            let currentInputSlider = $(this).parent().parent().parent().find("div").eq(0).find("input").first();
+
+            if ($(this).is(":checked")) {
+                $(currentInputSlider).val("0");
+                $(currentInputSlider).attr("val", "0");
+                $(currentInputSlider).attr("disabled", true)
+                $(this).parent().parent().find("span").first().text("Uncertain")
+            } else {
+                $(currentInputSlider).val("2");
+                $(currentInputSlider).attr("val", "2");
+                $(currentInputSlider).removeAttr("disabled")
+                $(currentInputSlider).change()
+            }
+
+        });
+
+    });
+
+    let fullmessage = "";
+
+    function validateStudentNumber(studentNumber, studentidentifier) {
+        let responseCode;
+        //Validate student number
+
+        //Check if not null
+        if (studentNumber == "") {
+            fullmessage = fullmessage + "Student "+ studentidentifier + " has no student number inputted."
+            return 3
+        }
+
+        let studentCheckData = {
+            "Student Number": studentNumber
+        }
+        // This is the post request call to check the student number against the whitelist of students that feedback can be given as
+        // If the student number is not in the right format, then a 422 will be returned, just as with /feedback/submission
+        // If the student number is ok, then a 200 will be returned, with the data 'Available Student': True
+        // If the student number is not ok, then a 200 will be returned, with the data 'Available Student': False, and a confirmation message will need to be displayed to the user before /feedback/submission is called
+        $.ajax({
+            method: "POST",
+            async: false,
+            data: studentCheckData,
+            url: "/feedback/check-number",
+            success: function (result) {
+                {#let responseData = JSON.parse(result)#}
+
+                if (result["Available Student"] == true) {
+                    responseCode = 1
+                    {#fullmessage = fullmessage + "Student " + studentidentifier + " has been successfully parsed and you are scheduled to play them. \n"#}
+                }else{
+                    responseCode = 2
+                }
+
+            },
+            error: function (data) {
+                if (data.status == 422) {
+                    let jsonResponse = data.responseJSON
+                    fullmessage = fullmessage + "Error for Student " + studentidentifier + ": " + jsonResponse["Error"]+ ".\n"
+                    responseCode = 3
+                }
+            },fail: function(){
+                responseCode = 4
+            }
+        });
+
+        return responseCode
+
+    }
+
+
+
+    $("#submit").click(function () {
+        console.log("Student A: "+$("#AstudentNumber").val())
+        console.log("Student B: "+$("#BstudentNumber").val())
+        fullmessage = "";
+
+        //Check if students number are 7 digits long
+
+        //if ($('#AstudentNumber').val().toString().length != 7){
+            //alert("Student A is invalid. Student numbers require 7 digits to be valid")
+            //return
+        //}
+
+        //if ($('#BstudentNumber').val().toString().length != 7){
+            //alert("Student B is invalid. Student numbers require 7 digits to be valid")
+            //return
+        //}
+
+        //Validate fields
+
+        //Uncheck confirm box
+        $(this).attr("disabled",true);
+        document.getElementById("confirm").checked = false;
+
+        const debugging = false; //Set this to false for production use
+
+
+
+        if (!debugging) {
+            //Check all comments
+
+            if ($("#APositiveComment").val() == "") {
+                alert("Student A outstanding features comment required")
+                return;
+            }
+
+            if ($("#ANegativeComment").val() == "") {
+                alert("Student A development areas comment required")
+                return;
+            }
+
+            if ($("#BPositiveComment").val() == "") {
+                alert("Student B outstanding features comment required")
+                return;
+            }
+
+            if ($("#BNegativeComment").val() == "") {
+                alert("Student B development areas comment required")
+                return;
+            }
+
+            //Check student A number
+            let checkStudentANumber = validateStudentNumber($("#AstudentNumber").val(), "A")
+
+            if (checkStudentANumber == 3) {
+                fullmessage = fullmessage + "Student A's student number has failed validation.\n"
+                fullmessage = fullmessage + "No feedback has been submitted.\n"
+                alert(fullmessage)
+                fullmessage = ""
+                return
+            } else if (checkStudentANumber == 2) {
+                if (!confirm("You are not scheduled to play Student A, are you sure to submit?")) {
+                    fullmessage = fullmessage + "You have cancelled feedback submission and no feedback has been recorded due to you not being scheduled against Student A.\n"
+                    alert(fullmessage)
+                    fullmessage = ""
+                    return
+                }
+                fullmessage = fullmessage + "You are not scheduled to play Student A, but you have chosen to override.\n"
+            } else if (checkStudentANumber == 1) {
+                fullmessage = fullmessage + "Student A has been successfully parsed and you are scheduled to play them. \n"
+            } else if (checkStudentANumber == 4) {
+                fullmessage = fullmessage + "Unknown internal server error occurred when checking student A's student number for valid form.\n"
+                fullmessage = fullmessage + "No feedback has been submitted.\n"
+                return
+            }
+
+            //CHECK STUDENT B number
+            let checkStudentBNumber = validateStudentNumber($("#BstudentNumber").val(), "B")
+
+            if (checkStudentBNumber == 3) {
+                fullmessage = fullmessage + "Student B's student number has failed validation.\n"
+                fullmessage = fullmessage + "No feedback has been submitted.\n"
+                alert(fullmessage)
+                fullmessage = ""
+                return
+            } else if (checkStudentBNumber == 2) {
+                if (!confirm("You are not scheduled to play Student B, are you sure to submit?")) {
+                    fullmessage = fullmessage = fullmessage + "You have cancelled feedback submission and no feedback has been recorded due to you not being scheduled against Student B.\n"
+                    alert(fullmessage)
+                    fullmessage = ""
+                    return
+                }
+                fullmessage = fullmessage + "You are not scheduled to play Student B, but you have chosen to override.\n"
+            } else if (checkStudentBNumber == 1) {
+                fullmessage = fullmessage + "Student B has been successfully parsed and you are scheduled to play them.\n"
+            }
+            else if (checkStudentBNumber == 4) {
+                    fullmessage = fullmessage + "Unknown internal server error occurred when checking student B's student number for valid form.\n"
+                    fullmessage = fullmessage + "No feedback has been submitted.\n"
+                    return
+            }
+        }
+
+        let studentAFormData = {
+            "Student": $("#AstudentNumber").val(),
+            "Metric 1": $("#Ametric1").attr("val"),
+            "Metric 2": $("#Ametric2").attr("val"),
+            "Metric 3": $("#Ametric3").attr("val"),
+            "Metric 4": $("#Ametric4").attr("val"),
+            "PositiveComment": $("#APositiveComment").val(),
+            "NegativeComment": $("#ANegativeComment").val()
+        };
+
+        let studentBFormData = {
+            "Student": $("#BstudentNumber").val(),
+            "Metric 1": $("#Bmetric1").attr("val"),
+            "Metric 2": $("#Bmetric2").attr("val"),
+            "Metric 3": $("#Bmetric3").attr("val"),
+            "Metric 4": $("#Bmetric4").attr("val"),
+            "PositiveComment": $("#BPositiveComment").val(),
+            "NegativeComment": $("#BNegativeComment").val()
+        };
+
+        console.log("Student A")
+        console.log(studentAFormData)
+        console.log("Student B")
+        console.log(studentBFormData)
+
+        // //Submit student A data
+        // $.post("/feedback/submission", studentAFormData).fail(function(data){
+        //     alert("Student A request failed")
+        // })
+
+        // //Submit student B data
+        // $.post("/feedback/submission", studentBFormData).fail(function(data){
+        //     alert("Student B request failed")
+        // }).success(function(data){
+        //     let studentA = $("#AstudentNumber").val()
+        //     let studentB = $("#BstudentNumber").val()
+        //     alert("Feedback for students "+ studentA +" and "+ studentB +" successfully logged");
+        //     document.location.href = "/home";
+        // })
+
+        //Send data to backend for processing
+        let sucessA = false;
+        $.ajax({
+            type: "POST",
+            url: '/feedback/submission',
+            async: false,
+            data: studentAFormData,
+            success: function () {
+                fullmessage = fullmessage + "Form data for student A has been successfully submitted.\n"
+
+                sucessA = true;
+            }, error: function () {
+                let responseJSON = JSON.parse(response.data)
+                
+                fullmessage = fullmessage + "The submission of student A form data has failed. This means that your feedback for student A has not been recorded. Please submit feedback again for both student A and B.\n"
+                fullmessage = fullmessage + "Error: " + responseJSON["Error"] + ".\n"
+            },fail: function(){
+                fullmessage = fullmessage + " Unknown internal server error has occurred. Please verify with both students A and B whether they have received your feedback and take action accordingly."
+            }
+        })
+
+        let sucessB = false;
+        $.ajax({
+            type: "POST",
+            url: '/feedback/submission',
+            async: false,
+            data: studentBFormData,
+            error: function (response) {
+                let responseJSON = JSON.parse(response.data)
+
+                fullmessage = fullmessage + "The submission of student B form data has failed. This means that your feedback for student B has not been recorded. Please submit feedback again for both student A and B.\n"
+                fullmessage = fullmessage + "Error: " + responseJSON["Error"] + ".\n"
+            },
+            success: function () {
+                fullmessage = fullmessage + "Form data for student B has been successfully submitted\n"
+
+                sucessB = true
+            },fail: function(){
+                fullmessage = fullmessage + " Unknown internal server error has occurred. Please verify with both students A and B whether they have received your feedback and take action accordingly."
+            }
+        })
+
+        //Send notification of event log
+        alert(fullmessage)
+        fullmessage = ""
+
+        //Both request are sucessful
+        if ( sucessA == true && sucessB == true){
+            window.location.href = "/home"
+        }
+    });
+</script>
+</html>

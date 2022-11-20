@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+         <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+         <!-- jQuery library -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!-- Popper JS -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+         <!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+            <div class="row">
+                <div class="col-sm">
+                    <i style="padding-bottom: 5px;" class="fas fa-book fa-5x"></i>
+                </div>
+                <div class="col-sm">
+                    <h1 style="text-align:center;padding-top: 5px;padding-bottom: 0px;">Student Sign up</h1> 
+                </div>
+                <div class="col-sm"></div>
+            </div>
+            {% include 'menu/public.html' %}
+              </div>
+        </head>
+    <body>
+        <div class="container">
+
+            <p class="lead">Provide Student Number below to begin sign up</p>
+            <table class="table">
+                <tr>
+                    <th>Student Number</th>
+                    <td>
+                        <input id="student" class="form-control newStudent" placeholder="student number e.g 3305123">
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align:center;">
+                <button id="sub-btn" class="btn btn-success">Sign Up</button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        function validateStudentNumber(studentNumber) {
+        //Validate student number
+
+        //Check if not null
+        if (studentNumber == "") {
+            alert("Student number is required")
+            return
+        }
+
+        //Check if student number is valid
+        let checkLowerC = /^[c]\d{7}$/
+        let checkHigherC = /^[C]\d{7}$/
+        let checkNoC = /^\d{7}$/
+
+        let studentValid = false;
+
+        if (checkLowerC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (checkHigherC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (checkNoC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (!studentValid) {
+            return false
+        }
+
+        return true
+    }
+       
+    $(document).ready( function(){
+            
+            $("#sub-btn").click( function(){
+                let formData = {
+                    "studentNumber": $("#student").val()
+                };
+
+                //Check student number is valid
+                if(!validateStudentNumber(formData.studentNumber)){
+                    alert("Invalid student number")
+                    return
+                }
+
+                //Send sign up request
+                $.ajax({
+                    type: "POST",
+                    url: '/student/signup',
+                    dataType: 'json',
+                    async: false,
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function () {
+                        alert("Sign up successful - Please check your university email to complete the sign up process. Please note that this email can take up to 15 minutes to be received in your inbox.")
+                        window.location.href = "/login"
+                    },
+                    error: function(){
+                        alert("Sign up failed")
+                    }
+                })
+            })
+        });
+        
+    </script>
+</html>

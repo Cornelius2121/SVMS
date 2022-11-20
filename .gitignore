@@ -127,3 +127,19 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Pycharm files
+.idea/
+.vscode/settings.json
+config.py
+Tests/TestFiles/*
+
+# Linux Services
+app.ini
+*.xlsx
+
+/DatabaseRestorePoints
+
+
+/GeneratedMarking
+/Uploads

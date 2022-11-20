@@ -1,0 +1,16 @@
+[
+  {
+    "id": 7,
+    "target": "1111111",
+    "author": "1234567",
+    "timesubmitted": "2021-07-19 00:09:57.463137",
+    "metric1": 3,
+    "metric2": 3,
+    "metric3": 3,
+    "metric4": 3,
+    "report": "1",
+    "goodcomment": "asdf",
+    "badcomment": "asdf",
+    "weeksubmitted": 1
+  }
+]

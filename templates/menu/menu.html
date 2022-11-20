@@ -1,0 +1,62 @@
+<style>
+    .container {
+        height: auto;
+    }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/home">MECH1750</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% if show_group==True %}
+            <li class="nav-item">
+                <a class="nav-link" href="/group/signup">Group Signup</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="/schedule/tutorial">Schedule</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">Feedback</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item alert-warning" href="/feedback/action-feedback">Pending Action Feedback</a>
+                    <a class="dropdown-item" href="/feedback/action-feedback/historical">Action Feedback History</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/feedback">Feedback</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/standings">Standing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/stats">Stats</a>
+            </li>
+            
+            <!-- Student specfic pages  Corn use the following code to pages exclusivly to admin users-->
+
+            {% if g.userDetails %}
+                {% if g.userDetails.role == "admin" %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin-stuff">Admin</a>
+
+                    </li>
+                {% endif %}
+            {% endif %}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+
+            </li>
+          </ul>
+    </div>
+</nav>

@@ -1,0 +1,317 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(245, 161, 66);opacity: 0.8;color:white;">
+        <div class="d-flex">
+            <div class="p-2">
+                <i class="fas fa-5x fa-clipboard-list"></i>
+            </div>
+            <div class="p-2 flex-grow-1">
+                <h1 style="text-align:center;">Marking</h1>
+            </div>
+        </div>
+        {% with show_group = student_show_group %}
+            {% include 'Admin/Menu/Menu.html' %}
+        {% endwith %}
+    </div>
+</head>
+
+<body>
+<div class="container" style="background-color:rgb(112, 65, 189)ange;border-radius: 25px;opacity: 0.8; height: 20%;">
+    <h2>Week</h2>
+    <select id="weekSelector" class="form-control"></select>
+    <br>
+</div>
+<div class="container"
+     style="background-color:rgb(112, 65, 189)ange;border-radius: 25px;opacity: 0.8; height: 100%;">
+    <h3>Options</h3>
+    <br>
+    <table class="table table-bordered" id="markingOptions">
+
+    </table>
+ </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="overflow:auto;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content" style="height: 40em;" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Request in progress</h5>
+          <a id="close" href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+
+        </div>
+        <div class="modal-body"  >
+            <div class="wrapper" >
+                <div class="progressbar-wrapper">
+                     <div class="progressbar">
+                         <div class="side front">
+                             <div class="bar"></div>
+                         </div>
+                         <div class="side back">
+                             <div class="bar"></div>
+                         </div>
+                         <div class="side top">
+                             <div class="bar"></div>
+                         </div>
+                         <div class="side bottom">
+                             <div class="bar"></div>
+                         </div>
+                         <div class="side left"></div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-start">
+            <h5 class="form-control-static pull-left" id="processingText">Processing</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<style>
+
+.modal-dialog{
+            height:14em;
+        }
+    .wrapper {
+    width: 100%;
+    min-height: 800px;
+    position: absolute;
+    display: block;
+}
+.progressbar-wrapper {
+    width: 300px;
+    height: 60px;
+    top: 30%; 
+    left: 45%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.progressbar {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-30deg);
+}
+.side {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254, 254, 254, 0.3);
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.bottom {
+    box-shadow: 10px 10px 50px 5px rgba(90, 90, 90, 0.7);
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.top {
+    transform: translate(0, -100%) rotateX(90deg);
+    transform-origin: bottom;
+}
+.back {
+    transform: translateZ(-60px);
+}
+.left {
+    width: 60px;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    background-color: rgba(225, 0, 120, 0.6);
+}
+.bar {
+    height:100%;
+    background-color: rgba(109, 225, 0, 0.6);
+    box-shadow: 5px 5px 50px 5px rgba(225, 0, 120, 0.3);
+    width:70%;
+}
+</style>
+{% include 'menu/footer.html' %}
+<script>
+
+    let loadPercent = 0
+    let RColour = 7
+    let BColour = 41
+    let GColour = 101
+
+    let numberOfDots = 0;
+
+    let processText = "Processing"
+    function Loading(){
+        loadPercent = loadPercent + 10
+
+        $('.bar').width(loadPercent+'%');
+
+        let currentProcessingText = processText
+        
+        //Add dots
+        for(let i=0;i<numberOfDots;i++){
+            currentProcessingText = currentProcessingText+"."
+        }
+        
+        //Update processing texts
+        $("#processingText").text(currentProcessingText)
+
+        //Check process text counter
+        if (numberOfDots > 4){
+            numberOfDots = 0
+        }
+        numberOfDots++
+
+        if (loadPercent == 100){
+            RColour = Math.floor((Math.random(16) * 255) + 1); 
+            BColour = Math.floor((Math.random(32) * 255) + 1);
+            GColour = Math.floor((Math.random(64) * 255) + 1);
+
+            let backColour = `rgba(${RColour}, ${BColour}, ${GColour}, 0.6)`
+            let backBoxColour = `5px 5px 50px 5px rgba(${RColour}, ${BColour}, ${GColour}, 0.3)`
+            
+            $(".bar").css("background-color", backColour)
+            $(".bar").css("box-shadow", backBoxColour)
+            
+
+            loadPercent = 0
+        }
+    }
+
+$(document).ready(function () {
+
+        var intervalId = window.setInterval(function(){
+            Loading()
+        }, 250);
+
+        //Set up week options
+        let weeks = new Set()
+        latest_week = {{ latest_week }}
+        for (let week_counter = 1; week_counter <= latest_week; week_counter++) {
+            weeks.add(week_counter);
+        }
+
+        weeks.forEach(function(value){
+            $("#weekSelector").append(`<option value="${value}"> ${value} </option>`)
+        })
+
+        let jsonData = `{{ marking_selection | safe }}`;
+
+        let markingOptions = JSON.parse(jsonData)
+
+        //Insert all options into table
+
+        Object.keys(markingOptions).forEach(function (key) {
+            let name = key;
+            let template = `
+                <tr>
+                    <th>${name}</th>
+                    <td>
+                        <input name="${name}" class="markingOption" type="checkbox">
+                    </td>
+                </tr>
+            `;
+
+            $("#markingOptions").append(template)
+        });
+
+        //Inert button 
+        $("#markingOptions").append(`<tr>
+                <td></td>
+                <td>
+                    <button id="download" class="btn btn-primary">Download</button>
+                </td>
+            </tr>`);
+            //data-toggle="modal" data-target="#exampleModalCenter"
+        
+        //Setup AJAX request
+
+        $("#download").click(function () {
+            //Processing cover up
+            $('#exampleModalCenter').modal('show');
+            $("#close").hide();
+
+            let formData = {
+                "Columns": {},
+                "Week": -1
+            };
+
+            //Gather all check boxes values
+
+            $(".markingOption").each(function () {
+                let optionName = $(this).attr("name")
+
+                formData["Columns"][optionName] = $(this).is(":checked")
+
+            });
+            formData["Week"] = document.getElementById("weekSelector").value;
+
+            console.log(formData)
+
+            //Send AJAX
+            $.ajax({
+                //test url for csv file
+                url: "/admin/marking/generate",
+                data: JSON.stringify(formData),
+                method: "POST",
+                async: true,
+                contentType: 'application/json',
+                success: function (data, text, response) {
+                    var header = response.getResponseHeader('Content-Disposition');
+                    var filename = header.match(/filename="(.+)"/)[1];
+                    //File download handler
+                    var blob = new Blob([data]);
+                    blob.type = "text/csv"
+                    console.log(blob.size);
+                    console.log(blob)
+                    var link = document.createElement('a');
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = filename;
+                    link.click();
+
+                    //Close processing layer
+                    $('#exampleModalCenter').modal('hide');
+                    $("#close").show();
+                },
+                error: function () {
+                    //Close processing layer
+                    $('#exampleModalCenter').modal('hide');
+                    $("#close").show();
+                    alert("Error has occurred")
+                    
+                },
+                fail: function () {
+                    //Close processing layer
+                    $('#exampleModalCenter').modal('hide');
+                    $("#close").show();
+                    alert("Internal server error")
+                    
+                }
+            });
+
+        });
+        
+        
+
+    });
+</script>
+
+</html>

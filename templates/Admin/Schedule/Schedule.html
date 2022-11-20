@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(245, 161, 66);opacity: 0.8;color:white;">
+            <div class="d-flex">
+                <div class="p-2">
+                    <i class="fa fa-calendar fa-5x"></i>
+                </div>
+                <div class="p-2 flex-grow-1">
+                    <h1 style="text-align:center;">Admin Tutorial Schedule</h1>
+                </div>
+            </div>
+            {% with show_group = student_show_group %}
+                {% include 'Admin/Menu/Menu.html' %}
+             {% endwith %}
+              </div>
+    </head>
+    <body>
+        <div class="container" style="background-color:rgb(112, 65, 189)ange;border-radius: 25px;opacity: 0.8; height: 100%;">
+            <h2>Week</h2>
+            <select id="weekSelector" class="form-control"></select>
+            <br>
+            <h2>Tutorial</h2>
+            <select id="tutorialNumber" class="form-control"></select>
+            <br>
+            <h2>Results</h2>
+
+            <div id="results">
+
+            </div>
+
+        </div>
+
+    </body>
+    {% include 'menu/footer.html' %}
+    <script>
+
+        //Put schedule data in below in jsonData
+        //var jsonData = `{{ JSONData | safe }}`
+
+
+        var jsonData = `{{ JSONData | safe }}`
+        var JSONObj = JSON.parse(jsonData)
+
+        //Insert all 
+        function insertTutorialRounds(tutorialData){
+            //Empty div
+            $("#results").empty();
+
+            for(let i=0;i<tutorialData["rounds"].length;i++){
+                let round = tutorialData["rounds"][i]
+                let roundNo = round["round"]
+        
+                $("#results").append(`<h3>Round ${roundNo}</h3>`)
+                let newTable = $(`
+                    <table class='table table-hover'>
+                        <tr>
+                            <th>Group X</th>
+                            <th>Group Y</th>
+                            <th>Table</th>
+                        </tr>
+                    </table>
+                `);
+
+                //Insert all rows into newTable
+                for(let j=0;j<round["debates"].length;j++){
+                    let debate = round["debates"][j]
+
+                    
+                    let groupX =  debate["group x"]
+                    let groupY =  debate["group y"]
+                    let table =   debate["desk number"]
+
+                    //Attach row to new table
+                    $(newTable).append(`<tr>
+                                            <td>${groupX}</td>
+                                            <td>${groupY}</td>
+                                            <td>${table}</td>
+                                        </tr>`);
+                }
+
+                //Attach table to result div
+                $("#results").append(newTable)
+            }
+            
+
+            
+            
+        }
+
+        function getTutorialData(weekData,tutorialid){
+            console.log(weekData)
+            for(let j=0;j<weekData["tutorials"].length;j++){
+                if(weekData["tutorials"][j]["tutorial_number"] == tutorialid){
+                    return weekData["tutorials"][j];
+                }
+            }
+        }
+
+        function getWeekData(week){
+            for(let i=0;i<JSONObj.length;i++){
+                if (JSONObj[i]["week"] == week){
+                    return JSONObj[i]
+                }
+            }
+        }
+
+        function updateResults(weekSelected,tutSelected){
+            //Setup tutorial options
+            
+            let weekData = getWeekData(weekSelected)
+
+            //Empty tutorials select
+            $("#tutorialNumber").empty()
+            //Insert options into tutorial select
+            for(let i=0;i<weekData["tutorials"].length;i++){
+                
+                let tut_id = weekData["tutorials"][i]["tutorial_number"]
+                
+                if (i == 0){
+                    if( tutSelected == 0){
+                        tutSelected = tut_id
+                    }
+                }
+                $("#tutorialNumber").append(`<option value="${tut_id}"> ${tut_id} </option>`)
+            }
+
+            let tutData = getTutorialData(weekData,tutSelected)
+
+            insertTutorialRounds(tutData)
+        }
+
+        $(document).ready(function(){
+
+
+            let weeks = new Set()
+
+            //Set up week options
+            for(let i=0;i<JSONObj.length;i++){
+                weeks.add(JSONObj[i]["week"]);
+            }
+
+            weeks.forEach(function(value){
+                $("#weekSelector").append(`<option value="${value}"> ${value} </option>`)
+            })
+
+
+            let weekSelected = $("#weekSelector").find("option").first().val()
+
+
+
+            updateResults(weekSelected,0);
+
+            //Add listeners to update results
+            $("#weekSelector").change(function(){
+                updateResults($(this).find("option:selected").val(),$("#tutorialNumber").find("option:selected").val())
+            })
+            $("#tutorialNumber").change(function(){
+                updateResults($("#weekSelector").find("option:selected").val(),$(this).find("option:selected").val())
+            })
+
+        })
+    </script>
+</html>

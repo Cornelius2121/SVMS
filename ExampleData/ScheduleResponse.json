@@ -1,0 +1,192 @@
+[
+   {
+      "week":1,
+      "tutorials":[
+         {
+            "tutorial_number":1,
+            "rounds":[
+               {
+                  "round":1,
+                  "debates":[
+                     {
+                        "desk number":1,
+                        "group x":2,
+                        "group y":8
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":7
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":6
+                     },
+                     {
+                        "desk number":4,
+                        "group x":1,
+                        "group y":4
+                     },
+                     {
+                        "desk number":1,
+                        "group x":7,
+                        "group y":4
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":8
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":1
+                     },
+                     {
+                        "desk number":4,
+                        "group x":6,
+                        "group y":2
+                     }
+                  ]
+               },
+               {
+                  "round":2,
+                  "debates":[
+                     {
+                        "desk number":1,
+                        "group x":2,
+                        "group y":4
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":8
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":7
+                     },
+                     {
+                        "desk number":4,
+                        "group x":1,
+                        "group y":6
+                     },
+                     {
+                        "desk number":1,
+                        "group x":7,
+                        "group y":2
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":4
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":8
+                     },
+                     {
+                        "desk number":4,
+                        "group x":6,
+                        "group y":1
+                     }
+                  ]
+               },
+               {
+                  "round":3,
+                  "debates":[
+                     {
+                        "desk number":1,
+                        "group x":2,
+                        "group y":6
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":4
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":8
+                     },
+                     {
+                        "desk number":4,
+                        "group x":1,
+                        "group y":7
+                     },
+                     {
+                        "desk number":1,
+                        "group x":7,
+                        "group y":1
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":2
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":4
+                     },
+                     {
+                        "desk number":4,
+                        "group x":6,
+                        "group y":8
+                     }
+                  ]
+               },
+               {
+                  "round":4,
+                  "debates":[
+                     {
+                        "desk number":1,
+                        "group x":2,
+                        "group y":7
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":6
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":4
+                     },
+                     {
+                        "desk number":4,
+                        "group x":1,
+                        "group y":8
+                     },
+                     {
+                        "desk number":1,
+                        "group x":7,
+                        "group y":8
+                     },
+                     {
+                        "desk number":2,
+                        "group x":5,
+                        "group y":1
+                     },
+                     {
+                        "desk number":3,
+                        "group x":3,
+                        "group y":2
+                     },
+                     {
+                        "desk number":4,
+                        "group x":6,
+                        "group y":4
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+]

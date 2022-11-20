@@ -1,0 +1,294 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e40003e1d9.js" crossorigin="anonymous"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(245, 161, 66);opacity: 0.8;color:white;">
+        <div class="d-flex">
+            <div class="p-2">
+                <i class="fa-solid fa-user-group fa-5x"></i>
+            </div>
+            <div class="p-2 flex-grow-1">
+                <h1 style="text-align:center;">Edit Individual Group</h1>
+            </div>
+        </div>
+        {% with show_group = student_show_group %}
+            {% include 'Admin/Menu/Menu.html' %}
+        {% endwith %}
+    </div>
+    <style>
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #3e8e41;
+        }
+
+        /* The search field */
+        #myInput {
+            box-sizing: border-box;
+            background-image: url('{{url_for('static', filename='search_icon.png')}}');
+            background-position: 14px 12px;
+            background-size: 26px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* The search field when it gets focus/clicked on */
+        #myInput:focus {
+            outline: 3px solid #ddd;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            border: 1px solid #ddd;
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="height: 100%;">
+    <h2>Edit Group {{ group_number }}</h2>
+    <p>Group {{ group_number }} has a student count of {{ student_count }}.</p>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Students</th>
+            <th>Group Change</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+                <th>Student {{ loop.index }}:</th>
+                <td>{{ student }}</td>
+                <td>
+                    <label for="exampleFormControlFile2">Choose new group:</label>
+                    <select name="group_change_{{ loop.index }}" id="group_change_{{ loop.index }}">
+                        <option value="-1">No Change</option>
+                        {% for group in groups %}
+                            <option value="{{ student }}">{{ group }}</option>
+                        {% endfor %}
+                    </select>
+                    <button id="submit" style="margin-left: 20px"
+                            class="btn btn-info" onclick="changeGroupButtonClick({{ loop.index }})">
+                        Change
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <tr>
+            <th>Group State</th>
+            <th>Add Unallocated Students</th>
+        </tr>
+        <tr>
+            <td>
+                <!-- code for switch box -->
+                <table class="table">
+                    <tr>
+                        <td id="radios">
+                            {% if group_active %}
+                                <input type="radio" id="active" name="fav_language" value="True" checked="checked"
+                                       style="vertical-align: middle">
+                                <label for="active" style="vertical-align: middle">Active</label><br>
+                                <input type="radio" id="non-active" name="fav_language" value="False"
+                                       style="vertical-align: middle">
+                                <label for="non-active" style="vertical-align: middle">Not-Active</label><br>
+                            {% else %}
+                                <input type="radio" id="active" name="fav_language" value="True"
+                                       style="vertical-align: middle">
+                                <label for="active" style="vertical-align: middle">Active</label><br>
+                                <input type="radio" id="non-active" name="fav_language" value="False" checked="checked"
+                                       style="vertical-align: middle">
+                                <label for="non-active" style="vertical-align: middle">Not-Active</label><br>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+
+                </table>
+                <button id="submitActive" style=""
+                        class="btn btn-info" onclick="changeActiveButtonClick()">
+                    Change Active State
+                </button>
+            </td>
+            <td>
+                <label for="exampleFormControlFile3">Choose unallocated student to add to
+                    group {{ group_number }}:</label>
+                <select name="unallocated_student" id="unallocated_student">
+                    {% if unallocated_students|length > 0 %}
+                        <option value="-1">No Added Student</option>
+                        {% for student in unallocated_students %}
+                            <option value="{{ student }}">{{ student }}</option>
+                        {% endfor %}
+                    {% else %}
+                        <option value="-1">No Students to Add</option>
+                    {% endif %}
+                </select>
+                <button id="submit" style="margin-left: 20px"
+                        class="btn btn-info" onclick="addStudentButtonClick()">
+                    Add
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+{% include 'menu/footer.html' %}
+<script>
+    function addStudentButtonClick() {
+        var current_group = {{ group_number }};
+        var selected = $('#unallocated_student').find(":selected").text();
+        if (selected !== 'No Added Student' && selected !== 'No Students to Add') {
+            console.log("Student: " + selected + " to group: " + current_group)
+            let formData = {
+                "Student": selected,
+                "New Group": current_group
+            }
+            $.ajax({
+                type: "POST",
+                url: '/admin/edit/student/unallocated',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    document.location.href = "/admin/edit/groups/" + current_group;
+                },
+                error: function () {
+                    alert("Request failed")
+                }
+            })
+        } else {
+            console.log("No student to add.")
+        }
+    }
+
+
+    function changeActiveButtonClick() {
+        var initial_value = ('{{ group_active }}'.toLowerCase() === 'true');
+        var current_group = {{ group_number }};
+        var current_value = initial_value
+        if ($('#active').is(':checked')) {
+            current_value = true;
+        } else {
+            current_value = false;
+        }
+        console.log('initial: ' + initial_value)
+        console.log('current: ' + current_value)
+        if (initial_value !== current_value) {
+            let formData = {
+                'Change Value': current_value,
+                'Group ID': current_group
+            }
+            $.ajax({
+                type: "POST",
+                url: '/admin/edit/group/active',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    alert("Group active state has been updated.")
+                    document.location.href = "/admin/edit/groups/" + current_group;
+                },
+                error: function () {
+                    alert("Request failed")
+                }
+            })
+        } else {
+            alert('There is no change to the groups active status.');
+        }
+    }
+
+    function changeGroupButtonClick(input_value) {
+        var current_group = {{ group_number }};
+        var selected = $('#group_change_' + input_value).find(":selected").text();
+        console.log(selected)
+        var new_group;
+        if (selected !== 'No Change') {
+            new_group = parseInt(selected)
+            student_selected = $('#group_change_' + input_value).find(":selected").val();
+            console.log(student_selected + ' to group ' + new_group)
+            let formData = {
+                "Student": student_selected,
+                "New Group": new_group,
+                "Old Group": current_group
+            }
+            $.ajax({
+                type: "POST",
+                url: '/admin/edit/student',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    document.location.href = "/admin/edit/groups/" + current_group;
+                },
+                error: function () {
+                    alert("Request failed")
+                }
+            })
+        }
+    }
+
+    function changeGroupStatusButtonClick() {
+    }
+</script>
+</html>

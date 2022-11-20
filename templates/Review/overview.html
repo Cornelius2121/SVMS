@@ -1,0 +1,172 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+            <div class="row">
+                <div class="col-sm">
+                    <i style="padding-bottom: 5px;" class="fas fa-calendar fa-5x"></i>
+                </div>
+                <div class="col-sm">
+                    <h1 style="text-align:center;padding-top: 5px;padding-bottom: 0px;">Review</h1> 
+                </div>
+                <div class="col-sm"></div>
+            </div>
+            {% include 'menu/menu.html' %}
+              </div>
+    </head>
+    <body>
+
+      <style>
+        .fa-thumbs-up:hover{
+            color:indigo;
+        }
+
+        .fa-thumbs-down:hover{
+            color:indigo;
+        }
+
+        .fa-fist-raised:hover{
+            color:indigo;
+        }
+
+        .fa-flag:hover{
+            color:indianred;
+        }
+    </style>
+      <div class="container">
+      <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Incomplete Feedback</h4>
+        <p>Feedback is required for all comments made on a debate. If feedback is not given this <b>will impact your final grade mark.</b></p>
+        <hr>
+        <p class="mb-0">Below are the feedback needed to be completed.</p>
+      </div>
+      <h2>Pending Feedback<i style="padding-left: 20px;" class="fas fa-exclamation-triangle"></i></h2>
+        <table class="table">
+            <tr>
+                <th>Week</th>
+                <th>Round</th>
+                <th>Feedback</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>3</td>
+              <td>
+                <a class="btn btn-info">Give Feedback</a>
+              </td>
+            </tr>
+        </table>
+        <hr>
+        <h2>Comments</h2>
+        <br>
+        <div class="form-group">
+          <label for="week_number">Week</label>
+          <select class="form-control" id="week_number">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <table class="table">
+          <tr>
+            <th>Week</th>
+            <th>Round</th>
+            <th>View</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>5</td>
+            <td>
+              <a class="btn btn-info">View</a>
+            </td>
+          </tr>
+        </table>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: grey;">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" style="padding-bottom: 1em;">
+            <div class="carousel-item active">
+              <div class="card text-white bg-danger mb-3" style="float:none; margin:auto;max-width: 18rem;">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Warning card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success">
+                      <i class="fa fa-thumbs-up" style="font-size:36px"></i>
+                      <i class="fa fa-fist-raised" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-thumbs-down" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-flag" style="font-size:36px;padding-left:0.5em;"></i>
+
+
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card text-white bg-warning mb-3" style="float:none; margin:auto;max-width: 18rem;">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Warning card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success">
+                      <i class="fa fa-thumbs-up" style="font-size:36px"></i>
+                      <i class="fa fa-fist-raised" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-thumbs-down" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-flag" style="font-size:36px;padding-left:0.5em;"></i>
+
+
+                  </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card text-white bg-info mb-3" style="float:none; margin:auto;max-width: 18rem;">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Comment</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <hr>
+                    <h5 class="card-title">Reflection</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <div class="card-footer bg-transparent border-success">
+                      <i class="fa fa-thumbs-up" style="font-size:36px"></i>
+                      <i class="fa fa-fist-raised" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-thumbs-down" style="font-size:36px;padding-left: 0.5em;"></i>
+                      <i class="fa fa-flag" style="font-size:36px;padding-left:0.5em;"></i>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        </div>
+    </body>
+    {% include 'menu/footer.html' %}
+</html>

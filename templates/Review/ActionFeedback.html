@@ -1,0 +1,261 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+        <div class="d-flex">
+            <div class="p-2">
+                <i class="fas fa-comments fa-5x"></i>
+            </div>
+            <div class="p-2 flex-grow-1">
+                <h1 style="text-align:center;">Action Feedback</h1>
+            </div>
+        </div>
+        {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+    </div>
+</head>
+<body style="height: 100%;">
+
+<style>
+    .fa-thumbs-up:hover {
+        color: indigo;
+    }
+
+    .fa-thumbs-down:hover {
+        color: indigo;
+    }
+
+    .fa-fist-raised:hover {
+        color: indigo;
+    }
+
+    .fa-flag:hover {
+        color: indianred;
+    }
+</style>
+<div class="container" style="min-height: 110%;height: auto;">
+    <h3>Outstanding Features</h3>
+
+    <table class="table" id="positiveTable" style="table-layout: fixed;
+        word-wrap: break-word">
+        <tr id="positiveRow">
+            <th>Comment</th>
+            <th>Attribute</th>
+        </tr>
+    </table>
+
+    <hr>
+    <h3>Development Areas</h3>
+
+    <table class="table" id="negativeTable" style="table-layout: fixed;
+        word-wrap: break-word">
+        <tr id="negativeRow">
+            <th>Comment</th>
+            <th>Attribute</th>
+        </tr>
+    </table>
+
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="confirm">
+                <label class="form-check-label" for="confirm">Confirm action feedback responses</label>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button id="submit" style="display: block;
+                margin-left: auto;
+                margin-right: auto;" class="btn btn-info" disabled="true">Submit All
+            </button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+{% include 'menu/footer.html' %}
+<script>
+    $(document).ready(function () {
+
+        document.getElementById("confirm").checked = false;
+        $("#confirm").click(function () {
+            if ($(this).is(":checked")) {
+                $("#submit").removeAttr("disabled")
+            } else {
+                $("#submit").attr("disabled", true)
+            }
+        })
+
+        //Insert all comments onto page
+        //Comments data is when the JSON data is inputed
+        let commentsData = '{{ comments | safe }}';
+
+        let commentRow = '<tr><td style="max-width: 2em;"></td><td class=" text-white bg-warning feedback"><div class="d-flex flex-wrap"><div class="p-2"><i class="fa fa-thumbs-up" style="font-size:36px"></i></div> <div class="p-2"><i class="fa fa-fist-raised" style="font-size:36px;"></i></div><div class="p-2"><i class="fa fa-thumbs-down" style="font-size:36px;"></i></div><div class="p-2"><i class="fa fa-flag" style="font-size:36px;"></i></div></div></td></tr>';
+
+        let JSONComments = JSON.parse(commentsData)
+
+        {#JSONComments = JSONComments["Comments"]#}
+
+        for (let i = 0; i < JSONComments.length; i++) {
+            console.log(JSONComments[i])
+
+            var negativeCommentTD = $.parseHTML(commentRow)
+            let positiveCommentTD = $(negativeCommentTD).clone()
+
+            let negativeRow = $("<tr></tr>")
+            let positiveRow = $("<tr></tr>")
+
+            let id = JSONComments[i]["id"]
+
+            let goodComment = JSONComments[i]["goodcomment"];
+            let badComment = JSONComments[i]["badcomment"]
+
+            //Set id of both rows
+            $(negativeRow).attr("commentID", id)
+            $(positiveRow).attr("commentID", id)
+
+            //Insert good and bad comments
+            $(negativeCommentTD).find("td").first().text(badComment)
+            $(positiveCommentTD).find("td").first().text(goodComment)
+
+            $(negativeCommentTD).find("td").each(function () {
+                $(negativeRow).append($(this))
+            })
+
+            $(positiveCommentTD).find("td").each(function () {
+                $(positiveRow).append($(this))
+            })
+
+            //Insert rows into appropiate tables
+            $("#negativeRow").after(negativeRow)
+            $("#positiveRow").after(positiveRow)
+
+        }
+
+        //Determine which is selected
+        $(document).on("click", ".feedback>div>div>i", function () {
+            let currentColour = $(this).css("color")
+            let parentTD = $(this).parent().parent()
+
+            $(parentTD).find("i").each(function (currentNode) {
+                $(this).css("color", "")
+            })
+
+            $(this).css("color", currentColour)
+
+            //Record user value in DOM td
+            if ($(this).hasClass("fa-thumbs-up")) {
+                $(parentTD).attr("value", "1")
+            } else if ($(this).hasClass("fa-thumbs-down")) {
+                $(parentTD).attr("value", "2")
+            } else if ($(this).hasClass("fa-fist-raised")) {
+                $(parentTD).attr("value", "3")
+            } else if ($(this).hasClass("fa-flag")) {
+                $(parentTD).attr("value", "4")
+            }
+
+        });
+
+        $("#submit").click(function () {
+            //Gather good and bad comments responses into a map
+
+            var mapResponses = new Map();
+
+            let missingResponses = false
+
+            $("#positiveTable > tbody > tr").not(":first").each(function () {
+                let id = $(this).attr("commentid")
+                let responseValue = $(this).find("td").eq(1).find("div").eq(0).attr("value")
+
+                if (responseValue == undefined) {
+                    missingResponses = true
+                    alert("Missing a response from postive comments")
+                    return
+                }
+
+                let response = {
+                    "id": id,
+                    "goodcomment": responseValue
+                }
+
+                //Add to map responses
+                mapResponses.set(id, response);
+            })
+
+            if (missingResponses) {
+                return
+            }
+
+            $("#negativeTable > tbody > tr").not(":first").each(function () {
+                let id = $(this).attr("commentid")
+                let responseValue = $(this).find("td").eq(1).find("div").eq(0).attr("value")
+
+                if (responseValue == undefined) {
+                    missingResponses = true
+                    alert("Missing a response from negative comment")
+                    return
+                }
+
+                //Get response value from mapResponses
+                var response = mapResponses.get(id)
+
+                response["badcomment"] = responseValue
+
+                //Update map responses values
+                mapResponses.set(id, response);
+            })
+
+            if (missingResponses) {
+                return
+            }
+
+            //Convert map into an array of objects
+            let repsonseList = []
+
+            mapResponses.forEach(value => {
+                repsonseList.push(value)
+            })
+
+            let formData = {
+                "Comments": repsonseList
+            }
+
+            console.log(formData)
+
+            //Send data to backend for processing
+            $.ajax({
+                type: "POST",
+                url: '/feedback/action-feedback/record', //Whatever URL you need to send it to
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    alert("Action feedback successfully logged");
+                    document.location.href = "/home";
+                }
+            })
+        })
+    });
+</script>
+</html>

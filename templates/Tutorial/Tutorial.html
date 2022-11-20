@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="robots" content="noindex">
+    <meta content="Tutorial Page" name="description">
+    <title>Tutorial {{ tutorial_number }}</title>
+    <style type="text/css">
+        .group {
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#groups').change(function () {
+                // Get the value of the dropdown
+                var value = this.value;
+                // Hid all classes
+                $(".group").hide();
+                // Convert the first char to uppercase
+                value = 'divgroup' + value;
+                // Hide all food divs
+
+                $('#' + value).show();
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+{#  Create the full list of students  #}
+<h1> Tutorial {{ tutorial_number }} </h1>
+<ol>
+    {% for student in students %}
+        <li>{{ student }}</li>
+    {% endfor %}
+</ol>
+{#  Create the full list of groups  #}
+<h2> Groups </h2>
+<select name="groups" id="groups">
+    {% for group in groups %}
+        <option value={{ group['group_number'] }}>{{ group['group_number'] }}</option>
+    {% endfor %}
+</select>
+{#  Create Hidden Divs for the group  #}
+{% for group in groups %}
+    <div id="divgroup{{ group['group_number'] }}" class="group">
+        <ol>
+            {% for student in group['group_members'] %}
+                <li>{{ student }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endfor %}
+
+
+</body>
+</html>
+
+
+
+
+
+

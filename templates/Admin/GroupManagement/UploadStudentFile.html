@@ -1,0 +1,65 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(245, 161, 66);opacity: 0.8;color:white;">
+        <div class="row">
+            <div class="col-sm">
+                <!-- <i style="padding-bottom: 5px;" class="fas fa-comments fa-5x"></i> -->
+            </div>
+            <div class="col-sm">
+                <h1 style="text-align:center;padding-top: 5px;padding-bottom: 0px;">Admin Main Menu</h1>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+        {% with show_group = student_show_group %}
+            {% include 'Admin/Menu/Menu.html' %}
+        {% endwith %}
+    </div>
+    <style>
+        #links {
+            font-size: 22px;
+            color: black;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+
+    <form action="/admin/upload-students/ingest" method="post" enctype = "multipart/form-data">
+        <label for="students">Choose a profile picture:</label>
+        <input type="file"
+               id="students" name="file"
+               accept=".xls">
+        <input type = "submit"/>
+    </form>
+
+
+</div>
+{% include 'menu/footer.html' %}
+</body>
+
+</html>

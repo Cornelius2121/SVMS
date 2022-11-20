@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+         <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+         <!-- jQuery library -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+         <!-- Popper JS -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+         <!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+         <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+            <div class="d-flex">
+                <div class="p-2">
+                    <i class="fas fa-chart-bar fa-5x"></i>
+                </div>
+                <div class="p-2 flex-grow-1">
+                    <h1 style="text-align:center;">Stats</h1> 
+                </div>
+            </div>
+             {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+              </div>
+        </head>
+    <body>
+        <div class="container">
+
+            <h2>Overall Performance</h2>
+            <table class="table tabel-bordered" id="performanceTable">
+                <tr>
+                    <th></th>
+                    <th>This week</th>
+                    <th>Semester</th>
+                </tr>
+                <tr>
+                    <th>Presentation Skills</th>
+                </tr>
+                <tr>
+                    <th>Technical Understanding</th>
+                </tr>
+                <tr>
+                    <th>Discussion</th>
+                </tr>
+                <tr>
+                    <th>Professionalism</th>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                </tr>
+                </tr>
+            </table>
+
+            <hr>
+
+            <h2>Graph</h2>
+
+            <div id="chart">
+            </div>
+        </div>
+    </body>
+    {% include 'menu/footer.html' %}
+    <script>
+
+        $(document).ready( function(){
+            //Get JSON stats data
+
+            let statRawData = '{{ stats | safe }}';
+            let averageRawData = '{{ averages | safe }}';
+            // let statRawData = '{ "stats": [ {"week":1, "metric1":1,"metric2":1,"metric3":1,"metric4":1,"total":4}, {"week":2, "metric1":2,"metric2":3,"metric3":2,"metric4":2,"total":2.25} ]}';            
+            let statData = JSON.parse(statRawData)
+            let averageData = JSON.parse(averageRawData)
+
+            let numberOfWeeks = statData.length;
+
+            console.log()
+
+            let graphData = [];
+
+            let averages = {
+                metric1: 0,
+                metric2: 0,
+                metric3: 0,
+                metric4: 0,
+                total:0
+            }
+
+            //Compute all the averages for each metric
+
+            //Sum the properties of each week
+            for(let i=0;i<numberOfWeeks;i++){
+                averages.metric1 += statData[i].metric1;
+                averages.metric2 += statData[i].metric2;
+                averages.metric3 += statData[i].metric3;
+                averages.metric4 += statData[i].metric4;
+                averages.total += statData[i].total;
+
+                graphData.push([statData[i].week,statData[i].total])
+            }
+
+            //Divide all properties by number of weeks
+            for (const key in averages) {
+                averages[key] /= numberOfWeeks 
+            }
+
+            numberOfWeeks = numberOfWeeks - 1
+
+            console.log(statData)
+            console.log(averages)
+            console.log(graphData)
+
+            //Display the results in the performace table
+
+            let performanceTable = $("#performanceTable").find("tr")
+
+            $(performanceTable).eq(1).append("<td>"+ statData[numberOfWeeks].metric1 +"</td><td>"+ averageData.metric1 +"</td>")
+            $(performanceTable).eq(2).append("<td>"+ statData[numberOfWeeks].metric2 +"</td><td>"+ averageData.metric2 +"</td>")
+            $(performanceTable).eq(3).append("<td>"+ statData[numberOfWeeks].metric3 +"</td><td>"+ averageData.metric3 +"</td>")
+            $(performanceTable).eq(4).append("<td>"+ statData[numberOfWeeks].metric4 +"</td><td>"+ averageData.metric4 +"</td>")
+            $(performanceTable).eq(5).append("<td>"+ statData[numberOfWeeks].total   +"</td><td>"+ averageData.total   +"</td>")
+
+
+            //Graph the total
+
+            var options = {
+          series: [{
+          name: "",
+          data: graphData
+        }],
+          chart: {
+          height: 350,
+          type: 'scatter',
+          zoom: {
+            enabled: true,
+            type: 'xy'
+          }
+        },
+        xaxis: {
+            type:"numeric",
+            min:1,
+            max:12,
+          title: {
+            text: 'Weeks'
+          },
+          tickAmount: 5,
+          labels: {
+            formatter: function(val) {
+              return parseInt(val)
+            }
+          }
+        },
+        yaxis: {
+            tickAmount: 12,
+            type:"numeric",
+            min:0,
+            max:4,
+          title: {
+            text: 'Score'
+          },
+          tickAmount: 4,
+          labels: {
+            formatter: function(val) {
+              return parseInt(val)
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+        });
+        
+    </script>
+</html>

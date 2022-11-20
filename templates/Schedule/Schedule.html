@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="Schedule Page" name="description">
+    <meta name="robots" content="noindex">
+    <title>Schedule for Week {{ week_number }}</title>
+    <style type="text/css">
+        .group {
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#groups').change(function () {
+                // Get the value of the dropdown
+                var value = this.value;
+                // Hid all classes
+                $(".group").hide();
+                // Convert the first char to uppercase
+                value = 'divgroup' + value;
+                // Hide all food divs
+
+                $('#' + value).show();
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+{#  Create the full list of students  #}
+<h1> Tutorial {{ tutorial_number }} </h1>
+<ol>
+    {% for student in students %}
+        <li>{{ student }}</li>
+    {% endfor %}
+</ol>
+{#  Create the full list of groups  #}
+<h2> Groups </h2>
+<select name="groups" id="groups">
+    {% for group in groups %}
+        <option value={{ group['group_number'] }}>{{ group['group_number'] }}</option>
+    {% endfor %}
+</select>
+{#  Create Hidden Divs for the tutorials  #}
+<div id="divtutorial1" class="tutorial">
+    <table style="width:80%; text-align: center">
+        <tr>
+            <th>Desk Number</th>
+            <th>Group Number 1</th>
+            <th>Group Number 2</th>
+        </tr>
+        {% set round_count = 0 %}
+        {% set desk_count = 0 %}
+        {% for round in full_schedule %}
+            {#            <tr>#}
+            {#                {% set round_count = round_count + 1 %}#}
+            {#                <th>Round {{ round_count }}</th>#}
+            {#            </tr>#}
+
+            {% set desk_count = desk_count + 1 %}
+            <tr>
+                <td>{{ desk_count }}</td>
+                <td>{{ round['groupx'] }}</td>
+                <td>{{ round['groupy'] }}</td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+

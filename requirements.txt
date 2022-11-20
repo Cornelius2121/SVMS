@@ -1,0 +1,13 @@
+pyodbc
+flask
+censusname
+scikit-learn
+flask_cors
+pytz
+boto3
+pyjwt
+uwsgi
+pandas
+xlrd
+XlsxWriter
+apscheduler

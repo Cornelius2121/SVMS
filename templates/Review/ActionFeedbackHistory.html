@@ -1,0 +1,180 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+            <div class="d-flex">
+                <div class="p-2">
+                    <i class="fas fa-comments fa-5x"></i>
+                </div>
+                <div class="p-2 flex-grow-1">
+                    <h1 style="text-align:center;">Action Feedback</h1> 
+                </div>
+            </div>
+            {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+              </div>
+    </head>
+    <body>
+
+      <style>
+        .fa-thumbs-up{
+            color:indigo;
+        }
+
+        .fa-thumbs-down{
+            color:indigo;
+        }
+
+        .fa-fist-raised{
+            color:indigo;
+        }
+
+        .fa-flag{
+            color:indianred;
+        }
+    </style>
+    <div class="container" style="height: 100%;">
+        <select class="form-control" id="selectWeek"></select>
+        <br>
+        <h3>Outstanding Features</h3>
+
+        <table class="table" id="positiveTable" style="table-layout: fixed;
+        word-wrap: break-word">
+            <tr id="positiveRow">
+                <th>Comment</th>
+                <th>Attribute</th>
+            </tr>
+        </table>
+
+        <hr>
+        <h3>Development Areas</h3>
+
+        <table class="table" id="negativeTable" style="table-layout: fixed;
+        word-wrap: break-word">
+            <tr id="negativeRow">
+                <th>Comment</th>
+                <th>Attribute</th>
+            </tr>
+        </table>
+    </div>
+
+    </body>
+    {% include 'menu/footer.html' %}
+    <script>
+
+        var JSONComments;
+        const scoreSymbols = ["fa-thumbs-up","fa-thumbs-down","fa-fist-raised","fa-flag"]
+
+        $(document).ready( function(){
+            //Insert all comments onto page
+            //Comments data is when the JSON data is inputed
+            let commentsData = '{{ comments | safe }}';
+
+            let commentRow = '<tr><td style="max-width: 2em;"></td><td class=" text-white bg-warning feedback"><i class="fa" style="font-size:36px"></i></td></tr>';
+
+            JSONComments = JSON.parse(commentsData)
+
+            //Setup week selector
+            for(let k=0;k<JSONComments.length;k++){
+                $("#selectWeek").append('<option value='+ (k+1) +'>'+ (k+1) +'</option>')
+            }
+
+            //Setup on chnage handler
+
+
+            updateRows(1)
+
+            $("#selectWeek").on("change",function(){
+                updateRows($(this).val())
+            })
+
+            function updateRows(week){
+
+                //Clears rows except first for both tables
+                $("#negativeTable > tbody > tr").not(":first").remove();
+                $("#positiveTable > tbody > tr").not(":first").remove();
+
+
+                for(let i=0;i<JSONComments.length;i++){
+                
+
+                if(JSONComments[i]["Week"] != week){
+                    continue;
+                }
+
+                let weekComments = JSONComments[i]["Week Comments"]
+
+                console.log(week)
+                console.log(JSONComments[i])
+
+                for(let j=0;j<weekComments.length;j++){
+                    var negativeCommentTD = $.parseHTML(commentRow)
+                let positiveCommentTD = $(negativeCommentTD).clone()
+
+                let negativeRow = $("<tr></tr>")
+                let positiveRow = $("<tr></tr>")
+
+                let id = weekComments[j]["id"]
+
+                let goodComment = weekComments[j]["good"]["goodcomment"];
+                let goodScore = weekComments[j]["good"]["goodcomment_score"]
+
+                let badComment = weekComments[j]["bad"]["badcomment"]
+                let badScore = weekComments[j]["bad"]["badcomment_score"]
+
+                //Set id of both rows
+                $(negativeRow).attr("commentID",id)
+                $(positiveRow).attr("commentID",id)
+
+                //Insert good and bad comments
+                $(negativeCommentTD).find("td").first().text(badComment)
+                $(positiveCommentTD).find("td").first().text(goodComment)
+
+                //Add score symbol 
+                $(negativeCommentTD).find("td").eq(1).find("i").first().addClass(scoreSymbols[badScore-1])
+                $(positiveCommentTD).find("td").eq(1).find("i").first().addClass(scoreSymbols[goodScore-1])
+
+
+
+                $(negativeCommentTD).find("td").each( function(){
+                    $(negativeRow).append($(this))
+                })
+
+                $(positiveCommentTD).find("td").each( function(){
+                    $(positiveRow).append($(this))
+                })
+
+                //Insert rows into appropiate tables
+                $("#negativeRow").after(negativeRow)
+                $("#positiveRow").after(positiveRow)
+                
+                }
+
+                
+
+                if(JSONComments[i]["Week"] == week){
+                    break;
+                }
+
+            }
+            }
+            
+        });
+    </script>
+</html>

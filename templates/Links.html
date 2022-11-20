@@ -1,0 +1,142 @@
+<html>
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+
+<body>
+<div class="container" style="margin-top: 1em;">
+    <a href="http://videos.mech1750.com" target="_blank" style="color: white;">
+
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color: #a30024;border-radius: 25px;margin-bottom: 1em;">
+            <div class="container">
+                <div>
+                    <span class="fab fa-youtube fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Videos</span>
+                </div>
+
+            </div>
+        </div>
+    </a>
+
+    <a href="http://textbook.mech1750.com/" target="_blank" style="color: white;">
+
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color: #3bcd3e;border-radius: 25px;margin-bottom: 1em;">
+
+            <div class="container">
+                <div>
+                    <span class="fa fa-book fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Textbook</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="/login" style="color: white;">
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color: #1070bd;color: white;border-radius: 25px;margin-bottom: 1em;">
+            <div class="container">
+                <div>
+                    <span class="fa fa-bullhorn fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Tutorials<br>
+                        <!-- <p class="lead" style="padding-left: 0.4em;">Coming soon</p></span> -->
+
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="http://live.mech1750.com" style="color: white;">
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color:#FF00DE;color: white;border-radius: 25px;margin-bottom: 1em;">
+            <div class="container">
+                <div>
+                    <span class="fas fa-video fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Live<br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="http://timetable.mech1750.com/" target="_blank" style="color: white;">
+
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color: #6f2e9d;color: white;border-radius: 25px;margin-bottom: 1em;">
+            <div class="container">
+                <div>
+                    <span class="fa fa-calendar fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Timetable</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="http://contact.mech1750.com/" target="_blank" style="color: white;">
+
+        <div class="jumbotron jumbotron-fluid"
+             style="background-color: #000000;color: white;border-radius: 25px;margin-bottom: 1em;" id="scrollTo">
+
+            <div class="container">
+                <div>
+                    <span class="fa fa-envelope fa-4x" style=" vertical-align: middle;"></span>
+                    <span class="h1" style=" vertical-align: middle;float: right;">Contact</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <table class="table">
+        <tr><td>Current Version: {{ version_number }}</td></tr>
+
+    <div class="d-flex flex-wrap justify-content-center bg-secondary">
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="scrollBtn">
+            <i class="fas fa-arrow-down"></i>
+        </button>
+
+    </div>
+
+
+
+</div>
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#scrollBtn").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#scrollTo").offset().top
+            }, 1000);
+
+            $(this).hide()
+        })
+    })
+</script>
+<style>
+    #scrollBtn {
+        position: fixed;
+        bottom: 20px;
+        display: block;
+    }
+</style>
+</html>

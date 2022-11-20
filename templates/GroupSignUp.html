@@ -1,0 +1,172 @@
+<html>
+<head>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+        <div class="row">
+            <div class="col-sm">
+                <i class="fas fa-book fa-5x"></i>
+            </div>
+            <div class="col-sm">
+                <h1 style="text-align:center;padding-top: 25px;padding-bottom: 10px;">Groups</h1>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+        {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+    </div>
+</head>
+<body>
+
+<div class="container" style="height: 100%;">
+    <h3 style="text-align: center;">Create a new group</h3>
+    <br>
+    <table class="table">
+        <tr>
+            <th>Position</th>
+            <th>Student Numbers</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>
+                <input id="studentA" class="form-control newStudent" placeholder="student number e.g 3305123">
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>
+                <input id="studentB" class="form-control newStudent" placeholder="student number e.g 3305123">
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>
+                <input id="studentC" class="form-control newStudent" placeholder="student number e.g 3305123">
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>
+                <input id="studentD" class="form-control newStudent" placeholder="student number e.g 3305123">
+            </td>
+        </tr>
+    </table>
+    <div style="text-align:center;">
+        <button id="sub-btn" class="btn btn-success">Submit</button>
+    </div>
+
+</div>
+</body>
+{% include 'menu/footer.html' %}
+<script>
+    function validateStudentNumber(studentNumber) {
+        //Validate student number
+
+        //Check if not null
+        if (studentNumber == "") {
+            alert("Student number is required")
+            return
+        }
+
+        //Check if student number is valid
+        let checkLowerC = /^[c]\d{7}$/
+        let checkHigherC = /^[C]\d{7}$/
+        let checkNoC = /^\d{7}$/
+
+        let studentValid = false;
+
+        if (checkLowerC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (checkHigherC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (checkNoC.test(studentNumber)) {
+            studentValid = true;
+        }
+
+        if (!studentValid) {
+            return false
+        }
+
+        return true
+    }
+
+    $(document).ready(function () {
+        $("#sub-btn").click(function () {
+            //Submit JSON request
+            let formData = {
+                StudentA: $("#studentA").val(),
+                StudentB: $("#studentB").val(),
+                StudentC: $("#studentC").val(),
+                StudentD: $("#studentD").val(),
+            }
+
+            //Check each value student numbers
+            let checkStudentA = validateStudentNumber(formData.StudentA)
+            if (!checkStudentA || checkStudentA == "Not Found") {
+                alert("Student 1 - Invalid Number")
+                return
+            }
+
+            let checkStudentB = validateStudentNumber(formData.StudentB)
+            if (!checkStudentB || checkStudentB == "Not Found") {
+                alert("Student 2 - Invalid Number")
+                return
+            }
+
+            let checkStudentC = validateStudentNumber(formData.StudentC)
+            if (!checkStudentC || checkStudentC == "Not Found") {
+                alert("Student 3 - Invalid Number")
+                return
+            }
+
+            let checkStudentD = validateStudentNumber(formData.StudentD)
+            if (!checkStudentD || checkStudentD == "Not Found") {
+                alert("Student 4 - Invalid Number")
+                return
+            }
+
+            $.ajax({
+                type: "POST",
+                url: '/groups/create', //Whatever URL you need to send it to
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    alert("Group creation successful")
+                    document.location.href = "/home"
+                },
+                error: function(data){
+
+                    if(data.status == 422){
+                        let jsonResponse = data.responseJSON
+                        alert(jsonResponse["Error"])
+                    }
+                }
+            })
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e40003e1d9.js" crossorigin="anonymous"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <div class="jumbotron"
+         style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(245, 161, 66);opacity: 0.8;color:white;">
+        <div class="d-flex">
+            <div class="p-2">
+                <i class="fa-solid fa-user-group fa-5x"></i>
+            </div>
+            <div class="p-2 flex-grow-1">
+                <h1 style="text-align:center;">Edit Groups</h1>
+            </div>
+        </div>
+        {% with show_group = student_show_group %}
+            {% include 'Admin/Menu/Menu.html' %}
+        {% endwith %}
+    </div>
+</head>
+<body>
+<div class="container" style="height: 100%;">
+    <h2>Students Unallocated</h2>
+    <table class="table tabel-bordered" id="table">
+        <tr>
+            <td>
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>Student Number</th>
+                        <th>Tutorial Number</th>
+                    </tr>
+                    {% for student in unallocated_students %}
+                        <tr>
+                            <th>Student {{ loop.index }}:</th>
+                            <td>{{ student['studentnumber'] }}</td>
+                            <td>{{ student['tutorial'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+    </table>
+    <h2>Groups</h2>
+    <table class="table tabel-bordered" id="table">
+        <tr>
+            <th>Tutorial Number</th>
+            <th>Group Number</th>
+            <th>Students</th>
+            <th>Group Active</th>
+            <th>Edit Group</th>
+        </tr>
+        {% for group in groups %}
+            <tr>
+                <td>{{ group['Tutorial Number'] }}</td>
+                <td>{{ group['Group ID'] }}</td>
+                <td>
+                    <table class="table">
+                        {% for student in group['Students'] %}
+                            <tr>
+                                <th>Student {{ loop.index }}:</th>
+                                <td>{{ student }}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                <td>
+                    {% if group['Group Active'] %}
+                        <div class="d-flex flex-wrap">
+                            <div class="p-2"><i class="fa-solid fa-check" style="font-size:36px; color: lawngreen"></i>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="d-flex flex-wrap">
+                            <div class="p-2"><i class="fa-solid fa-xmark" style="font-size:36px; color: red"></i>
+                            </div>
+                        </div>
+                    {% endif %}
+                </td>
+                <td>
+                    <button id="submit" style="display: block; margin-left: auto; margin-right: auto;"
+                            class="btn btn-info" onclick="buttonClick({{ group['Group ID'] }})">
+                        Edit
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>
+        <h2>Create New Group</h2>
+        <table class="table tabel-bordered" id="table">
+            <tr>
+                <th>Tutorial</th>
+                <th>Create</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="add_new_group_tutorial" id="create_tutorial_value">
+                        {% for tutorial in tutorials %}
+                            <option value="{{ tutorial }}">{{ tutorial }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <button id="submit" style="display: block; "
+                            class="btn btn-info" onclick="createGroup()">
+                        Create
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+{% include 'menu/footer.html' %}
+<script>
+    function buttonClick(value) {
+        window.location.replace("/admin/edit/groups/ " + value);
+    }
+    function createGroup() {
+        var tutorial = $('#create_tutorial_value').find(":selected").text();
+        let formData = {
+                "Tutorial": tutorial,
+            }
+        $.ajax({
+                type: "POST",
+                url: '/admin/create/group',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function () {
+                    document.location.href = "/admin/edit/groups";
+                },
+                error: function () {
+                    alert("Request failed")
+                }
+            })
+    }
+
+</script>
+</html>

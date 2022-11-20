@@ -1,0 +1,2902 @@
+[
+  {
+    "week": 1,
+    "tutorials": [
+      {
+        "tutorial_number": 1,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 67,
+                "group y": 18
+              },
+              {
+                "desk number": 2,
+                "group x": 64,
+                "group y": 22
+              },
+              {
+                "desk number": 3,
+                "group x": 59,
+                "group y": 15
+              },
+              {
+                "desk number": 4,
+                "group x": 60,
+                "group y": 65
+              },
+              {
+                "desk number": 5,
+                "group x": 38,
+                "group y": 44
+              },
+              {
+                "desk number": 6,
+                "group x": 30,
+                "group y": 10
+              },
+              {
+                "desk number": 7,
+                "group x": 70,
+                "group y": 17
+              },
+              {
+                "desk number": 8,
+                "group x": 61,
+                "group y": 54
+              },
+              {
+                "desk number": 9,
+                "group x": 74,
+                "group y": 56
+              },
+              {
+                "desk number": 10,
+                "group x": 68,
+                "group y": 7
+              },
+              {
+                "desk number": 11,
+                "group x": 45,
+                "group y": 19
+              },
+              {
+                "desk number": 12,
+                "group x": 33,
+                "group y": 63
+              },
+              {
+                "desk number": 13,
+                "group x": 4,
+                "group y": 66
+              },
+              {
+                "desk number": 14,
+                "group x": 73,
+                "group y": 62
+              },
+              {
+                "desk number": 15,
+                "group x": 71,
+                "group y": 72
+              },
+              {
+                "desk number": 16,
+                "group x": 69,
+                "group y": 47
+              },
+              {
+                "desk number": 17,
+                "group x": 28,
+                "group y": 58
+              },
+              {
+                "desk number": 18,
+                "group x": 32,
+                "group y": "Admin"
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 67,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 2,
+                "group x": 64,
+                "group y": 18
+              },
+              {
+                "desk number": 3,
+                "group x": 59,
+                "group y": 22
+              },
+              {
+                "desk number": 4,
+                "group x": 60,
+                "group y": 15
+              },
+              {
+                "desk number": 5,
+                "group x": 38,
+                "group y": 65
+              },
+              {
+                "desk number": 6,
+                "group x": 30,
+                "group y": 44
+              },
+              {
+                "desk number": 7,
+                "group x": 70,
+                "group y": 10
+              },
+              {
+                "desk number": 8,
+                "group x": 61,
+                "group y": 17
+              },
+              {
+                "desk number": 9,
+                "group x": 74,
+                "group y": 54
+              },
+              {
+                "desk number": 10,
+                "group x": 68,
+                "group y": 56
+              },
+              {
+                "desk number": 11,
+                "group x": 45,
+                "group y": 7
+              },
+              {
+                "desk number": 12,
+                "group x": 33,
+                "group y": 19
+              },
+              {
+                "desk number": 13,
+                "group x": 4,
+                "group y": 63
+              },
+              {
+                "desk number": 14,
+                "group x": 73,
+                "group y": 66
+              },
+              {
+                "desk number": 15,
+                "group x": 71,
+                "group y": 62
+              },
+              {
+                "desk number": 16,
+                "group x": 69,
+                "group y": 72
+              },
+              {
+                "desk number": 17,
+                "group x": 28,
+                "group y": 47
+              },
+              {
+                "desk number": 18,
+                "group x": 32,
+                "group y": 58
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 67,
+                "group y": 58
+              },
+              {
+                "desk number": 2,
+                "group x": 64,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 3,
+                "group x": 59,
+                "group y": 18
+              },
+              {
+                "desk number": 4,
+                "group x": 60,
+                "group y": 22
+              },
+              {
+                "desk number": 5,
+                "group x": 38,
+                "group y": 15
+              },
+              {
+                "desk number": 6,
+                "group x": 30,
+                "group y": 65
+              },
+              {
+                "desk number": 7,
+                "group x": 70,
+                "group y": 44
+              },
+              {
+                "desk number": 8,
+                "group x": 61,
+                "group y": 10
+              },
+              {
+                "desk number": 9,
+                "group x": 74,
+                "group y": 17
+              },
+              {
+                "desk number": 10,
+                "group x": 68,
+                "group y": 54
+              },
+              {
+                "desk number": 11,
+                "group x": 45,
+                "group y": 56
+              },
+              {
+                "desk number": 12,
+                "group x": 33,
+                "group y": 7
+              },
+              {
+                "desk number": 13,
+                "group x": 4,
+                "group y": 19
+              },
+              {
+                "desk number": 14,
+                "group x": 73,
+                "group y": 63
+              },
+              {
+                "desk number": 15,
+                "group x": 71,
+                "group y": 66
+              },
+              {
+                "desk number": 16,
+                "group x": 69,
+                "group y": 62
+              },
+              {
+                "desk number": 17,
+                "group x": 28,
+                "group y": 72
+              },
+              {
+                "desk number": 18,
+                "group x": 32,
+                "group y": 47
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 67,
+                "group y": 47
+              },
+              {
+                "desk number": 2,
+                "group x": 64,
+                "group y": 58
+              },
+              {
+                "desk number": 3,
+                "group x": 59,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 4,
+                "group x": 60,
+                "group y": 18
+              },
+              {
+                "desk number": 5,
+                "group x": 38,
+                "group y": 22
+              },
+              {
+                "desk number": 6,
+                "group x": 30,
+                "group y": 15
+              },
+              {
+                "desk number": 7,
+                "group x": 70,
+                "group y": 65
+              },
+              {
+                "desk number": 8,
+                "group x": 61,
+                "group y": 44
+              },
+              {
+                "desk number": 9,
+                "group x": 74,
+                "group y": 10
+              },
+              {
+                "desk number": 10,
+                "group x": 68,
+                "group y": 17
+              },
+              {
+                "desk number": 11,
+                "group x": 45,
+                "group y": 54
+              },
+              {
+                "desk number": 12,
+                "group x": 33,
+                "group y": 56
+              },
+              {
+                "desk number": 13,
+                "group x": 4,
+                "group y": 7
+              },
+              {
+                "desk number": 14,
+                "group x": 73,
+                "group y": 19
+              },
+              {
+                "desk number": 15,
+                "group x": 71,
+                "group y": 63
+              },
+              {
+                "desk number": 16,
+                "group x": 69,
+                "group y": 66
+              },
+              {
+                "desk number": 17,
+                "group x": 28,
+                "group y": 62
+              },
+              {
+                "desk number": 18,
+                "group x": 32,
+                "group y": 72
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 2,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 40,
+                "group y": 43
+              },
+              {
+                "desk number": 2,
+                "group x": 46,
+                "group y": 53
+              },
+              {
+                "desk number": 3,
+                "group x": 49,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 4,
+                "group x": 37,
+                "group y": 16
+              },
+              {
+                "desk number": 5,
+                "group x": 35,
+                "group y": 11
+              },
+              {
+                "desk number": 6,
+                "group x": 39,
+                "group y": 78
+              },
+              {
+                "desk number": 7,
+                "group x": 25,
+                "group y": 52
+              },
+              {
+                "desk number": 8,
+                "group x": 6,
+                "group y": 3
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 21
+              },
+              {
+                "desk number": 10,
+                "group x": 51,
+                "group y": 12
+              },
+              {
+                "desk number": 11,
+                "group x": 42,
+                "group y": 36
+              },
+              {
+                "desk number": 12,
+                "group x": 77,
+                "group y": 76
+              },
+              {
+                "desk number": 13,
+                "group x": 14,
+                "group y": 9
+              },
+              {
+                "desk number": 14,
+                "group x": 26,
+                "group y": 8
+              },
+              {
+                "desk number": 15,
+                "group x": 20,
+                "group y": 48
+              },
+              {
+                "desk number": 16,
+                "group x": 29,
+                "group y": 31
+              },
+              {
+                "desk number": 17,
+                "group x": 55,
+                "group y": 50
+              },
+              {
+                "desk number": 18,
+                "group x": 57,
+                "group y": 24
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 40,
+                "group y": 24
+              },
+              {
+                "desk number": 2,
+                "group x": 46,
+                "group y": 43
+              },
+              {
+                "desk number": 3,
+                "group x": 49,
+                "group y": 53
+              },
+              {
+                "desk number": 4,
+                "group x": 37,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 5,
+                "group x": 35,
+                "group y": 16
+              },
+              {
+                "desk number": 6,
+                "group x": 39,
+                "group y": 11
+              },
+              {
+                "desk number": 7,
+                "group x": 25,
+                "group y": 78
+              },
+              {
+                "desk number": 8,
+                "group x": 6,
+                "group y": 52
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 3
+              },
+              {
+                "desk number": 10,
+                "group x": 51,
+                "group y": 21
+              },
+              {
+                "desk number": 11,
+                "group x": 42,
+                "group y": 12
+              },
+              {
+                "desk number": 12,
+                "group x": 77,
+                "group y": 36
+              },
+              {
+                "desk number": 13,
+                "group x": 14,
+                "group y": 76
+              },
+              {
+                "desk number": 14,
+                "group x": 26,
+                "group y": 9
+              },
+              {
+                "desk number": 15,
+                "group x": 20,
+                "group y": 8
+              },
+              {
+                "desk number": 16,
+                "group x": 29,
+                "group y": 48
+              },
+              {
+                "desk number": 17,
+                "group x": 55,
+                "group y": 31
+              },
+              {
+                "desk number": 18,
+                "group x": 57,
+                "group y": 50
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 40,
+                "group y": 50
+              },
+              {
+                "desk number": 2,
+                "group x": 46,
+                "group y": 24
+              },
+              {
+                "desk number": 3,
+                "group x": 49,
+                "group y": 43
+              },
+              {
+                "desk number": 4,
+                "group x": 37,
+                "group y": 53
+              },
+              {
+                "desk number": 5,
+                "group x": 35,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 6,
+                "group x": 39,
+                "group y": 16
+              },
+              {
+                "desk number": 7,
+                "group x": 25,
+                "group y": 11
+              },
+              {
+                "desk number": 8,
+                "group x": 6,
+                "group y": 78
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 52
+              },
+              {
+                "desk number": 10,
+                "group x": 51,
+                "group y": 3
+              },
+              {
+                "desk number": 11,
+                "group x": 42,
+                "group y": 21
+              },
+              {
+                "desk number": 12,
+                "group x": 77,
+                "group y": 12
+              },
+              {
+                "desk number": 13,
+                "group x": 14,
+                "group y": 36
+              },
+              {
+                "desk number": 14,
+                "group x": 26,
+                "group y": 76
+              },
+              {
+                "desk number": 15,
+                "group x": 20,
+                "group y": 9
+              },
+              {
+                "desk number": 16,
+                "group x": 29,
+                "group y": 8
+              },
+              {
+                "desk number": 17,
+                "group x": 55,
+                "group y": 48
+              },
+              {
+                "desk number": 18,
+                "group x": 57,
+                "group y": 31
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 40,
+                "group y": 31
+              },
+              {
+                "desk number": 2,
+                "group x": 46,
+                "group y": 50
+              },
+              {
+                "desk number": 3,
+                "group x": 49,
+                "group y": 24
+              },
+              {
+                "desk number": 4,
+                "group x": 37,
+                "group y": 43
+              },
+              {
+                "desk number": 5,
+                "group x": 35,
+                "group y": 53
+              },
+              {
+                "desk number": 6,
+                "group x": 39,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 7,
+                "group x": 25,
+                "group y": 16
+              },
+              {
+                "desk number": 8,
+                "group x": 6,
+                "group y": 11
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 78
+              },
+              {
+                "desk number": 10,
+                "group x": 51,
+                "group y": 52
+              },
+              {
+                "desk number": 11,
+                "group x": 42,
+                "group y": 3
+              },
+              {
+                "desk number": 12,
+                "group x": 77,
+                "group y": 21
+              },
+              {
+                "desk number": 13,
+                "group x": 14,
+                "group y": 12
+              },
+              {
+                "desk number": 14,
+                "group x": 26,
+                "group y": 36
+              },
+              {
+                "desk number": 15,
+                "group x": 20,
+                "group y": 76
+              },
+              {
+                "desk number": 16,
+                "group x": 29,
+                "group y": 9
+              },
+              {
+                "desk number": 17,
+                "group x": 55,
+                "group y": 8
+              },
+              {
+                "desk number": 18,
+                "group x": 57,
+                "group y": 48
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 3,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 27,
+                "group y": 79
+              },
+              {
+                "desk number": 2,
+                "group x": 87,
+                "group y": 92
+              },
+              {
+                "desk number": 3,
+                "group x": 83,
+                "group y": 34
+              },
+              {
+                "desk number": 4,
+                "group x": 85,
+                "group y": 91
+              },
+              {
+                "desk number": 5,
+                "group x": 84,
+                "group y": 88
+              },
+              {
+                "desk number": 6,
+                "group x": 82,
+                "group y": 81
+              },
+              {
+                "desk number": 7,
+                "group x": 2,
+                "group y": 86
+              },
+              {
+                "desk number": 8,
+                "group x": 5,
+                "group y": 23
+              },
+              {
+                "desk number": 9,
+                "group x": 80,
+                "group y": 90
+              },
+              {
+                "desk number": 10,
+                "group x": 89,
+                "group y": 13
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 27,
+                "group y": 13
+              },
+              {
+                "desk number": 2,
+                "group x": 87,
+                "group y": 79
+              },
+              {
+                "desk number": 3,
+                "group x": 83,
+                "group y": 92
+              },
+              {
+                "desk number": 4,
+                "group x": 85,
+                "group y": 34
+              },
+              {
+                "desk number": 5,
+                "group x": 84,
+                "group y": 91
+              },
+              {
+                "desk number": 6,
+                "group x": 82,
+                "group y": 88
+              },
+              {
+                "desk number": 7,
+                "group x": 2,
+                "group y": 81
+              },
+              {
+                "desk number": 8,
+                "group x": 5,
+                "group y": 86
+              },
+              {
+                "desk number": 9,
+                "group x": 80,
+                "group y": 23
+              },
+              {
+                "desk number": 10,
+                "group x": 89,
+                "group y": 90
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 27,
+                "group y": 90
+              },
+              {
+                "desk number": 2,
+                "group x": 87,
+                "group y": 13
+              },
+              {
+                "desk number": 3,
+                "group x": 83,
+                "group y": 79
+              },
+              {
+                "desk number": 4,
+                "group x": 85,
+                "group y": 92
+              },
+              {
+                "desk number": 5,
+                "group x": 84,
+                "group y": 34
+              },
+              {
+                "desk number": 6,
+                "group x": 82,
+                "group y": 91
+              },
+              {
+                "desk number": 7,
+                "group x": 2,
+                "group y": 88
+              },
+              {
+                "desk number": 8,
+                "group x": 5,
+                "group y": 81
+              },
+              {
+                "desk number": 9,
+                "group x": 80,
+                "group y": 86
+              },
+              {
+                "desk number": 10,
+                "group x": 89,
+                "group y": 23
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 27,
+                "group y": 23
+              },
+              {
+                "desk number": 2,
+                "group x": 87,
+                "group y": 90
+              },
+              {
+                "desk number": 3,
+                "group x": 83,
+                "group y": 13
+              },
+              {
+                "desk number": 4,
+                "group x": 85,
+                "group y": 79
+              },
+              {
+                "desk number": 5,
+                "group x": 84,
+                "group y": 92
+              },
+              {
+                "desk number": 6,
+                "group x": 82,
+                "group y": 34
+              },
+              {
+                "desk number": 7,
+                "group x": 2,
+                "group y": 91
+              },
+              {
+                "desk number": 8,
+                "group x": 5,
+                "group y": 88
+              },
+              {
+                "desk number": 9,
+                "group x": 80,
+                "group y": 81
+              },
+              {
+                "desk number": 10,
+                "group x": 89,
+                "group y": 86
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 2,
+    "tutorials": [
+      {
+        "tutorial_number": 1,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 74,
+                "group y": 69
+              },
+              {
+                "desk number": 2,
+                "group x": 19,
+                "group y": 62
+              },
+              {
+                "desk number": 3,
+                "group x": 61,
+                "group y": 70
+              },
+              {
+                "desk number": 4,
+                "group x": 65,
+                "group y": 66
+              },
+              {
+                "desk number": 5,
+                "group x": 32,
+                "group y": 67
+              },
+              {
+                "desk number": 6,
+                "group x": 47,
+                "group y": 18
+              },
+              {
+                "desk number": 7,
+                "group x": 56,
+                "group y": 64
+              },
+              {
+                "desk number": 8,
+                "group x": 63,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 9,
+                "group x": 10,
+                "group y": 58
+              },
+              {
+                "desk number": 10,
+                "group x": 33,
+                "group y": 73
+              },
+              {
+                "desk number": 11,
+                "group x": 38,
+                "group y": 7
+              },
+              {
+                "desk number": 12,
+                "group x": 45,
+                "group y": 4
+              },
+              {
+                "desk number": 13,
+                "group x": 44,
+                "group y": 17
+              },
+              {
+                "desk number": 14,
+                "group x": 60,
+                "group y": 54
+              },
+              {
+                "desk number": 15,
+                "group x": 68,
+                "group y": 28
+              },
+              {
+                "desk number": 16,
+                "group x": 72,
+                "group y": 30
+              },
+              {
+                "desk number": 17,
+                "group x": 15,
+                "group y": 71
+              },
+              {
+                "desk number": 18,
+                "group x": 59,
+                "group y": 22
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 74,
+                "group y": 22
+              },
+              {
+                "desk number": 2,
+                "group x": 19,
+                "group y": 69
+              },
+              {
+                "desk number": 3,
+                "group x": 61,
+                "group y": 62
+              },
+              {
+                "desk number": 4,
+                "group x": 65,
+                "group y": 70
+              },
+              {
+                "desk number": 5,
+                "group x": 32,
+                "group y": 66
+              },
+              {
+                "desk number": 6,
+                "group x": 47,
+                "group y": 67
+              },
+              {
+                "desk number": 7,
+                "group x": 56,
+                "group y": 18
+              },
+              {
+                "desk number": 8,
+                "group x": 63,
+                "group y": 64
+              },
+              {
+                "desk number": 9,
+                "group x": 10,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 10,
+                "group x": 33,
+                "group y": 58
+              },
+              {
+                "desk number": 11,
+                "group x": 38,
+                "group y": 73
+              },
+              {
+                "desk number": 12,
+                "group x": 45,
+                "group y": 7
+              },
+              {
+                "desk number": 13,
+                "group x": 44,
+                "group y": 4
+              },
+              {
+                "desk number": 14,
+                "group x": 60,
+                "group y": 17
+              },
+              {
+                "desk number": 15,
+                "group x": 68,
+                "group y": 54
+              },
+              {
+                "desk number": 16,
+                "group x": 72,
+                "group y": 28
+              },
+              {
+                "desk number": 17,
+                "group x": 15,
+                "group y": 30
+              },
+              {
+                "desk number": 18,
+                "group x": 59,
+                "group y": 71
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 74,
+                "group y": 71
+              },
+              {
+                "desk number": 2,
+                "group x": 19,
+                "group y": 22
+              },
+              {
+                "desk number": 3,
+                "group x": 61,
+                "group y": 69
+              },
+              {
+                "desk number": 4,
+                "group x": 65,
+                "group y": 62
+              },
+              {
+                "desk number": 5,
+                "group x": 32,
+                "group y": 70
+              },
+              {
+                "desk number": 6,
+                "group x": 47,
+                "group y": 66
+              },
+              {
+                "desk number": 7,
+                "group x": 56,
+                "group y": 67
+              },
+              {
+                "desk number": 8,
+                "group x": 63,
+                "group y": 18
+              },
+              {
+                "desk number": 9,
+                "group x": 10,
+                "group y": 64
+              },
+              {
+                "desk number": 10,
+                "group x": 33,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 11,
+                "group x": 38,
+                "group y": 58
+              },
+              {
+                "desk number": 12,
+                "group x": 45,
+                "group y": 73
+              },
+              {
+                "desk number": 13,
+                "group x": 44,
+                "group y": 7
+              },
+              {
+                "desk number": 14,
+                "group x": 60,
+                "group y": 4
+              },
+              {
+                "desk number": 15,
+                "group x": 68,
+                "group y": 17
+              },
+              {
+                "desk number": 16,
+                "group x": 72,
+                "group y": 54
+              },
+              {
+                "desk number": 17,
+                "group x": 15,
+                "group y": 28
+              },
+              {
+                "desk number": 18,
+                "group x": 59,
+                "group y": 30
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 74,
+                "group y": 30
+              },
+              {
+                "desk number": 2,
+                "group x": 19,
+                "group y": 71
+              },
+              {
+                "desk number": 3,
+                "group x": 61,
+                "group y": 22
+              },
+              {
+                "desk number": 4,
+                "group x": 65,
+                "group y": 69
+              },
+              {
+                "desk number": 5,
+                "group x": 32,
+                "group y": 62
+              },
+              {
+                "desk number": 6,
+                "group x": 47,
+                "group y": 70
+              },
+              {
+                "desk number": 7,
+                "group x": 56,
+                "group y": 66
+              },
+              {
+                "desk number": 8,
+                "group x": 63,
+                "group y": 67
+              },
+              {
+                "desk number": 9,
+                "group x": 10,
+                "group y": 18
+              },
+              {
+                "desk number": 10,
+                "group x": 33,
+                "group y": 64
+              },
+              {
+                "desk number": 11,
+                "group x": 38,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 12,
+                "group x": 45,
+                "group y": 58
+              },
+              {
+                "desk number": 13,
+                "group x": 44,
+                "group y": 73
+              },
+              {
+                "desk number": 14,
+                "group x": 60,
+                "group y": 7
+              },
+              {
+                "desk number": 15,
+                "group x": 68,
+                "group y": 4
+              },
+              {
+                "desk number": 16,
+                "group x": 72,
+                "group y": 17
+              },
+              {
+                "desk number": 17,
+                "group x": 15,
+                "group y": 54
+              },
+              {
+                "desk number": 18,
+                "group x": 59,
+                "group y": 28
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 2,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 20,
+                "group y": 29
+              },
+              {
+                "desk number": 2,
+                "group x": 11,
+                "group y": 43
+              },
+              {
+                "desk number": 3,
+                "group x": 50,
+                "group y": 42
+              },
+              {
+                "desk number": 4,
+                "group x": 26,
+                "group y": 3
+              },
+              {
+                "desk number": 5,
+                "group x": 24,
+                "group y": 48
+              },
+              {
+                "desk number": 6,
+                "group x": 21,
+                "group y": 51
+              },
+              {
+                "desk number": 7,
+                "group x": 78,
+                "group y": 14
+              },
+              {
+                "desk number": 8,
+                "group x": 12,
+                "group y": 39
+              },
+              {
+                "desk number": 9,
+                "group x": 76,
+                "group y": 35
+              },
+              {
+                "desk number": 10,
+                "group x": 16,
+                "group y": 25
+              },
+              {
+                "desk number": 11,
+                "group x": 36,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 12,
+                "group x": 9,
+                "group y": 37
+              },
+              {
+                "desk number": 13,
+                "group x": 46,
+                "group y": 41
+              },
+              {
+                "desk number": 14,
+                "group x": 6,
+                "group y": 31
+              },
+              {
+                "desk number": 15,
+                "group x": 49,
+                "group y": 57
+              },
+              {
+                "desk number": 16,
+                "group x": 52,
+                "group y": 40
+              },
+              {
+                "desk number": 17,
+                "group x": 8,
+                "group y": 55
+              },
+              {
+                "desk number": 18,
+                "group x": 53,
+                "group y": 77
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 20,
+                "group y": 77
+              },
+              {
+                "desk number": 2,
+                "group x": 11,
+                "group y": 29
+              },
+              {
+                "desk number": 3,
+                "group x": 50,
+                "group y": 43
+              },
+              {
+                "desk number": 4,
+                "group x": 26,
+                "group y": 42
+              },
+              {
+                "desk number": 5,
+                "group x": 24,
+                "group y": 3
+              },
+              {
+                "desk number": 6,
+                "group x": 21,
+                "group y": 48
+              },
+              {
+                "desk number": 7,
+                "group x": 78,
+                "group y": 51
+              },
+              {
+                "desk number": 8,
+                "group x": 12,
+                "group y": 14
+              },
+              {
+                "desk number": 9,
+                "group x": 76,
+                "group y": 39
+              },
+              {
+                "desk number": 10,
+                "group x": 16,
+                "group y": 35
+              },
+              {
+                "desk number": 11,
+                "group x": 36,
+                "group y": 25
+              },
+              {
+                "desk number": 12,
+                "group x": 9,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 13,
+                "group x": 46,
+                "group y": 37
+              },
+              {
+                "desk number": 14,
+                "group x": 6,
+                "group y": 41
+              },
+              {
+                "desk number": 15,
+                "group x": 49,
+                "group y": 31
+              },
+              {
+                "desk number": 16,
+                "group x": 52,
+                "group y": 57
+              },
+              {
+                "desk number": 17,
+                "group x": 8,
+                "group y": 40
+              },
+              {
+                "desk number": 18,
+                "group x": 53,
+                "group y": 55
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 20,
+                "group y": 55
+              },
+              {
+                "desk number": 2,
+                "group x": 11,
+                "group y": 77
+              },
+              {
+                "desk number": 3,
+                "group x": 50,
+                "group y": 29
+              },
+              {
+                "desk number": 4,
+                "group x": 26,
+                "group y": 43
+              },
+              {
+                "desk number": 5,
+                "group x": 24,
+                "group y": 42
+              },
+              {
+                "desk number": 6,
+                "group x": 21,
+                "group y": 3
+              },
+              {
+                "desk number": 7,
+                "group x": 78,
+                "group y": 48
+              },
+              {
+                "desk number": 8,
+                "group x": 12,
+                "group y": 51
+              },
+              {
+                "desk number": 9,
+                "group x": 76,
+                "group y": 14
+              },
+              {
+                "desk number": 10,
+                "group x": 16,
+                "group y": 39
+              },
+              {
+                "desk number": 11,
+                "group x": 36,
+                "group y": 35
+              },
+              {
+                "desk number": 12,
+                "group x": 9,
+                "group y": 25
+              },
+              {
+                "desk number": 13,
+                "group x": 46,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 14,
+                "group x": 6,
+                "group y": 37
+              },
+              {
+                "desk number": 15,
+                "group x": 49,
+                "group y": 41
+              },
+              {
+                "desk number": 16,
+                "group x": 52,
+                "group y": 31
+              },
+              {
+                "desk number": 17,
+                "group x": 8,
+                "group y": 57
+              },
+              {
+                "desk number": 18,
+                "group x": 53,
+                "group y": 40
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 20,
+                "group y": 40
+              },
+              {
+                "desk number": 2,
+                "group x": 11,
+                "group y": 55
+              },
+              {
+                "desk number": 3,
+                "group x": 50,
+                "group y": 77
+              },
+              {
+                "desk number": 4,
+                "group x": 26,
+                "group y": 29
+              },
+              {
+                "desk number": 5,
+                "group x": 24,
+                "group y": 43
+              },
+              {
+                "desk number": 6,
+                "group x": 21,
+                "group y": 42
+              },
+              {
+                "desk number": 7,
+                "group x": 78,
+                "group y": 3
+              },
+              {
+                "desk number": 8,
+                "group x": 12,
+                "group y": 48
+              },
+              {
+                "desk number": 9,
+                "group x": 76,
+                "group y": 51
+              },
+              {
+                "desk number": 10,
+                "group x": 16,
+                "group y": 14
+              },
+              {
+                "desk number": 11,
+                "group x": 36,
+                "group y": 39
+              },
+              {
+                "desk number": 12,
+                "group x": 9,
+                "group y": 35
+              },
+              {
+                "desk number": 13,
+                "group x": 46,
+                "group y": 25
+              },
+              {
+                "desk number": 14,
+                "group x": 6,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 15,
+                "group x": 49,
+                "group y": 37
+              },
+              {
+                "desk number": 16,
+                "group x": 52,
+                "group y": 41
+              },
+              {
+                "desk number": 17,
+                "group x": 8,
+                "group y": 31
+              },
+              {
+                "desk number": 18,
+                "group x": 53,
+                "group y": 57
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 3,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 83
+              },
+              {
+                "desk number": 2,
+                "group x": 27,
+                "group y": 79
+              },
+              {
+                "desk number": 3,
+                "group x": 89,
+                "group y": 86
+              },
+              {
+                "desk number": 4,
+                "group x": 80,
+                "group y": 13
+              },
+              {
+                "desk number": 5,
+                "group x": 85,
+                "group y": 92
+              },
+              {
+                "desk number": 6,
+                "group x": 23,
+                "group y": 2
+              },
+              {
+                "desk number": 7,
+                "group x": 81,
+                "group y": 90
+              },
+              {
+                "desk number": 8,
+                "group x": 91,
+                "group y": 34
+              },
+              {
+                "desk number": 9,
+                "group x": 87,
+                "group y": 88
+              },
+              {
+                "desk number": 10,
+                "group x": 82,
+                "group y": 84
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 84
+              },
+              {
+                "desk number": 2,
+                "group x": 27,
+                "group y": 83
+              },
+              {
+                "desk number": 3,
+                "group x": 89,
+                "group y": 79
+              },
+              {
+                "desk number": 4,
+                "group x": 80,
+                "group y": 86
+              },
+              {
+                "desk number": 5,
+                "group x": 85,
+                "group y": 13
+              },
+              {
+                "desk number": 6,
+                "group x": 23,
+                "group y": 92
+              },
+              {
+                "desk number": 7,
+                "group x": 81,
+                "group y": 2
+              },
+              {
+                "desk number": 8,
+                "group x": 91,
+                "group y": 90
+              },
+              {
+                "desk number": 9,
+                "group x": 87,
+                "group y": 34
+              },
+              {
+                "desk number": 10,
+                "group x": 82,
+                "group y": 88
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 88
+              },
+              {
+                "desk number": 2,
+                "group x": 27,
+                "group y": 84
+              },
+              {
+                "desk number": 3,
+                "group x": 89,
+                "group y": 83
+              },
+              {
+                "desk number": 4,
+                "group x": 80,
+                "group y": 79
+              },
+              {
+                "desk number": 5,
+                "group x": 85,
+                "group y": 86
+              },
+              {
+                "desk number": 6,
+                "group x": 23,
+                "group y": 13
+              },
+              {
+                "desk number": 7,
+                "group x": 81,
+                "group y": 92
+              },
+              {
+                "desk number": 8,
+                "group x": 91,
+                "group y": 2
+              },
+              {
+                "desk number": 9,
+                "group x": 87,
+                "group y": 90
+              },
+              {
+                "desk number": 10,
+                "group x": 82,
+                "group y": 34
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 34
+              },
+              {
+                "desk number": 2,
+                "group x": 27,
+                "group y": 88
+              },
+              {
+                "desk number": 3,
+                "group x": 89,
+                "group y": 84
+              },
+              {
+                "desk number": 4,
+                "group x": 80,
+                "group y": 83
+              },
+              {
+                "desk number": 5,
+                "group x": 85,
+                "group y": 79
+              },
+              {
+                "desk number": 6,
+                "group x": 23,
+                "group y": 86
+              },
+              {
+                "desk number": 7,
+                "group x": 81,
+                "group y": 13
+              },
+              {
+                "desk number": 8,
+                "group x": 91,
+                "group y": 92
+              },
+              {
+                "desk number": 9,
+                "group x": 87,
+                "group y": 2
+              },
+              {
+                "desk number": 10,
+                "group x": 82,
+                "group y": 90
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "week": 3,
+    "tutorials": [
+      {
+        "tutorial_number": 1,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 63,
+                "group y": 4
+              },
+              {
+                "desk number": 2,
+                "group x": 60,
+                "group y": 61
+              },
+              {
+                "desk number": 3,
+                "group x": 66,
+                "group y": 15
+              },
+              {
+                "desk number": 4,
+                "group x": 58,
+                "group y": 47
+              },
+              {
+                "desk number": 5,
+                "group x": 44,
+                "group y": 70
+              },
+              {
+                "desk number": 6,
+                "group x": 7,
+                "group y": 45
+              },
+              {
+                "desk number": 7,
+                "group x": 62,
+                "group y": 32
+              },
+              {
+                "desk number": 8,
+                "group x": 19,
+                "group y": 17
+              },
+              {
+                "desk number": 9,
+                "group x": 38,
+                "group y": 64
+              },
+              {
+                "desk number": 10,
+                "group x": 67,
+                "group y": 69
+              },
+              {
+                "desk number": 11,
+                "group x": 18,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 12,
+                "group x": 22,
+                "group y": 54
+              },
+              {
+                "desk number": 13,
+                "group x": 65,
+                "group y": 33
+              },
+              {
+                "desk number": 14,
+                "group x": 59,
+                "group y": 28
+              },
+              {
+                "desk number": 15,
+                "group x": 10,
+                "group y": 74
+              },
+              {
+                "desk number": 16,
+                "group x": 68,
+                "group y": 30
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 63,
+                "group y": 30
+              },
+              {
+                "desk number": 2,
+                "group x": 60,
+                "group y": 4
+              },
+              {
+                "desk number": 3,
+                "group x": 66,
+                "group y": 61
+              },
+              {
+                "desk number": 4,
+                "group x": 58,
+                "group y": 15
+              },
+              {
+                "desk number": 5,
+                "group x": 44,
+                "group y": 47
+              },
+              {
+                "desk number": 6,
+                "group x": 7,
+                "group y": 70
+              },
+              {
+                "desk number": 7,
+                "group x": 62,
+                "group y": 45
+              },
+              {
+                "desk number": 8,
+                "group x": 19,
+                "group y": 32
+              },
+              {
+                "desk number": 9,
+                "group x": 38,
+                "group y": 17
+              },
+              {
+                "desk number": 10,
+                "group x": 67,
+                "group y": 64
+              },
+              {
+                "desk number": 11,
+                "group x": 18,
+                "group y": 69
+              },
+              {
+                "desk number": 12,
+                "group x": 22,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 13,
+                "group x": 65,
+                "group y": 54
+              },
+              {
+                "desk number": 14,
+                "group x": 59,
+                "group y": 33
+              },
+              {
+                "desk number": 15,
+                "group x": 10,
+                "group y": 28
+              },
+              {
+                "desk number": 16,
+                "group x": 68,
+                "group y": 74
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 63,
+                "group y": 74
+              },
+              {
+                "desk number": 2,
+                "group x": 60,
+                "group y": 30
+              },
+              {
+                "desk number": 3,
+                "group x": 66,
+                "group y": 4
+              },
+              {
+                "desk number": 4,
+                "group x": 58,
+                "group y": 61
+              },
+              {
+                "desk number": 5,
+                "group x": 44,
+                "group y": 15
+              },
+              {
+                "desk number": 6,
+                "group x": 7,
+                "group y": 47
+              },
+              {
+                "desk number": 7,
+                "group x": 62,
+                "group y": 70
+              },
+              {
+                "desk number": 8,
+                "group x": 19,
+                "group y": 45
+              },
+              {
+                "desk number": 9,
+                "group x": 38,
+                "group y": 32
+              },
+              {
+                "desk number": 10,
+                "group x": 67,
+                "group y": 17
+              },
+              {
+                "desk number": 11,
+                "group x": 18,
+                "group y": 64
+              },
+              {
+                "desk number": 12,
+                "group x": 22,
+                "group y": 69
+              },
+              {
+                "desk number": 13,
+                "group x": 65,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 14,
+                "group x": 59,
+                "group y": 54
+              },
+              {
+                "desk number": 15,
+                "group x": 10,
+                "group y": 33
+              },
+              {
+                "desk number": 16,
+                "group x": 68,
+                "group y": 28
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 63,
+                "group y": 28
+              },
+              {
+                "desk number": 2,
+                "group x": 60,
+                "group y": 74
+              },
+              {
+                "desk number": 3,
+                "group x": 66,
+                "group y": 30
+              },
+              {
+                "desk number": 4,
+                "group x": 58,
+                "group y": 4
+              },
+              {
+                "desk number": 5,
+                "group x": 44,
+                "group y": 61
+              },
+              {
+                "desk number": 6,
+                "group x": 7,
+                "group y": 15
+              },
+              {
+                "desk number": 7,
+                "group x": 62,
+                "group y": 47
+              },
+              {
+                "desk number": 8,
+                "group x": 19,
+                "group y": 70
+              },
+              {
+                "desk number": 9,
+                "group x": 38,
+                "group y": 45
+              },
+              {
+                "desk number": 10,
+                "group x": 67,
+                "group y": 32
+              },
+              {
+                "desk number": 11,
+                "group x": 18,
+                "group y": 17
+              },
+              {
+                "desk number": 12,
+                "group x": 22,
+                "group y": 64
+              },
+              {
+                "desk number": 13,
+                "group x": 65,
+                "group y": 69
+              },
+              {
+                "desk number": 14,
+                "group x": 59,
+                "group y": "Admin"
+              },
+              {
+                "desk number": 15,
+                "group x": 10,
+                "group y": 54
+              },
+              {
+                "desk number": 16,
+                "group x": 68,
+                "group y": 33
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 2,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 21,
+                "group y": 9
+              },
+              {
+                "desk number": 2,
+                "group x": 3,
+                "group y": 55
+              },
+              {
+                "desk number": 3,
+                "group x": 24,
+                "group y": 46
+              },
+              {
+                "desk number": 4,
+                "group x": 51,
+                "group y": 42
+              },
+              {
+                "desk number": 5,
+                "group x": 16,
+                "group y": 26
+              },
+              {
+                "desk number": 6,
+                "group x": 11,
+                "group y": 31
+              },
+              {
+                "desk number": 7,
+                "group x": 53,
+                "group y": 37
+              },
+              {
+                "desk number": 8,
+                "group x": 50,
+                "group y": 40
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 29
+              },
+              {
+                "desk number": 10,
+                "group x": 48,
+                "group y": 57
+              },
+              {
+                "desk number": 11,
+                "group x": 35,
+                "group y": 8
+              },
+              {
+                "desk number": 12,
+                "group x": 14,
+                "group y": 77
+              },
+              {
+                "desk number": 13,
+                "group x": 43,
+                "group y": 39
+              },
+              {
+                "desk number": 14,
+                "group x": 25,
+                "group y": 76
+              },
+              {
+                "desk number": 15,
+                "group x": 52,
+                "group y": 6
+              },
+              {
+                "desk number": 16,
+                "group x": 49,
+                "group y": 12
+              },
+              {
+                "desk number": 17,
+                "group x": 36,
+                "group y": 20
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 21,
+                "group y": 20
+              },
+              {
+                "desk number": 2,
+                "group x": 3,
+                "group y": 9
+              },
+              {
+                "desk number": 3,
+                "group x": 24,
+                "group y": 55
+              },
+              {
+                "desk number": 4,
+                "group x": 51,
+                "group y": 46
+              },
+              {
+                "desk number": 5,
+                "group x": 16,
+                "group y": 42
+              },
+              {
+                "desk number": 6,
+                "group x": 11,
+                "group y": 26
+              },
+              {
+                "desk number": 7,
+                "group x": 53,
+                "group y": 31
+              },
+              {
+                "desk number": 8,
+                "group x": 50,
+                "group y": 37
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 40
+              },
+              {
+                "desk number": 10,
+                "group x": 48,
+                "group y": 29
+              },
+              {
+                "desk number": 11,
+                "group x": 35,
+                "group y": 57
+              },
+              {
+                "desk number": 12,
+                "group x": 14,
+                "group y": 8
+              },
+              {
+                "desk number": 13,
+                "group x": 43,
+                "group y": 77
+              },
+              {
+                "desk number": 14,
+                "group x": 25,
+                "group y": 39
+              },
+              {
+                "desk number": 15,
+                "group x": 52,
+                "group y": 76
+              },
+              {
+                "desk number": 16,
+                "group x": 49,
+                "group y": 6
+              },
+              {
+                "desk number": 17,
+                "group x": 36,
+                "group y": 12
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 21,
+                "group y": 12
+              },
+              {
+                "desk number": 2,
+                "group x": 3,
+                "group y": 20
+              },
+              {
+                "desk number": 3,
+                "group x": 24,
+                "group y": 9
+              },
+              {
+                "desk number": 4,
+                "group x": 51,
+                "group y": 55
+              },
+              {
+                "desk number": 5,
+                "group x": 16,
+                "group y": 46
+              },
+              {
+                "desk number": 6,
+                "group x": 11,
+                "group y": 42
+              },
+              {
+                "desk number": 7,
+                "group x": 53,
+                "group y": 26
+              },
+              {
+                "desk number": 8,
+                "group x": 50,
+                "group y": 31
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 37
+              },
+              {
+                "desk number": 10,
+                "group x": 48,
+                "group y": 40
+              },
+              {
+                "desk number": 11,
+                "group x": 35,
+                "group y": 29
+              },
+              {
+                "desk number": 12,
+                "group x": 14,
+                "group y": 57
+              },
+              {
+                "desk number": 13,
+                "group x": 43,
+                "group y": 8
+              },
+              {
+                "desk number": 14,
+                "group x": 25,
+                "group y": 77
+              },
+              {
+                "desk number": 15,
+                "group x": 52,
+                "group y": 39
+              },
+              {
+                "desk number": 16,
+                "group x": 49,
+                "group y": 76
+              },
+              {
+                "desk number": 17,
+                "group x": 36,
+                "group y": 6
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 21,
+                "group y": 6
+              },
+              {
+                "desk number": 2,
+                "group x": 3,
+                "group y": 12
+              },
+              {
+                "desk number": 3,
+                "group x": 24,
+                "group y": 20
+              },
+              {
+                "desk number": 4,
+                "group x": 51,
+                "group y": 9
+              },
+              {
+                "desk number": 5,
+                "group x": 16,
+                "group y": 55
+              },
+              {
+                "desk number": 6,
+                "group x": 11,
+                "group y": 46
+              },
+              {
+                "desk number": 7,
+                "group x": 53,
+                "group y": 42
+              },
+              {
+                "desk number": 8,
+                "group x": 50,
+                "group y": 26
+              },
+              {
+                "desk number": 9,
+                "group x": 41,
+                "group y": 31
+              },
+              {
+                "desk number": 10,
+                "group x": 48,
+                "group y": 37
+              },
+              {
+                "desk number": 11,
+                "group x": 35,
+                "group y": 40
+              },
+              {
+                "desk number": 12,
+                "group x": 14,
+                "group y": 29
+              },
+              {
+                "desk number": 13,
+                "group x": 43,
+                "group y": 57
+              },
+              {
+                "desk number": 14,
+                "group x": 25,
+                "group y": 8
+              },
+              {
+                "desk number": 15,
+                "group x": 52,
+                "group y": 77
+              },
+              {
+                "desk number": 16,
+                "group x": 49,
+                "group y": 39
+              },
+              {
+                "desk number": 17,
+                "group x": 36,
+                "group y": 76
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tutorial_number": 3,
+        "rounds": [
+          {
+            "round": 1,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 82
+              },
+              {
+                "desk number": 2,
+                "group x": 90,
+                "group y": 79
+              },
+              {
+                "desk number": 3,
+                "group x": 13,
+                "group y": 23
+              },
+              {
+                "desk number": 4,
+                "group x": 87,
+                "group y": 27
+              },
+              {
+                "desk number": 5,
+                "group x": 83,
+                "group y": 84
+              },
+              {
+                "desk number": 6,
+                "group x": 81,
+                "group y": 2
+              },
+              {
+                "desk number": 7,
+                "group x": 85,
+                "group y": 86
+              },
+              {
+                "desk number": 8,
+                "group x": 80,
+                "group y": 34
+              }
+            ]
+          },
+          {
+            "round": 2,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 34
+              },
+              {
+                "desk number": 2,
+                "group x": 90,
+                "group y": 82
+              },
+              {
+                "desk number": 3,
+                "group x": 13,
+                "group y": 79
+              },
+              {
+                "desk number": 4,
+                "group x": 87,
+                "group y": 23
+              },
+              {
+                "desk number": 5,
+                "group x": 83,
+                "group y": 27
+              },
+              {
+                "desk number": 6,
+                "group x": 81,
+                "group y": 84
+              },
+              {
+                "desk number": 7,
+                "group x": 85,
+                "group y": 2
+              },
+              {
+                "desk number": 8,
+                "group x": 80,
+                "group y": 86
+              }
+            ]
+          },
+          {
+            "round": 3,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 86
+              },
+              {
+                "desk number": 2,
+                "group x": 90,
+                "group y": 34
+              },
+              {
+                "desk number": 3,
+                "group x": 13,
+                "group y": 82
+              },
+              {
+                "desk number": 4,
+                "group x": 87,
+                "group y": 79
+              },
+              {
+                "desk number": 5,
+                "group x": 83,
+                "group y": 23
+              },
+              {
+                "desk number": 6,
+                "group x": 81,
+                "group y": 27
+              },
+              {
+                "desk number": 7,
+                "group x": 85,
+                "group y": 84
+              },
+              {
+                "desk number": 8,
+                "group x": 80,
+                "group y": 2
+              }
+            ]
+          },
+          {
+            "round": 4,
+            "debates": [
+              {
+                "desk number": 1,
+                "group x": 5,
+                "group y": 2
+              },
+              {
+                "desk number": 2,
+                "group x": 90,
+                "group y": 86
+              },
+              {
+                "desk number": 3,
+                "group x": 13,
+                "group y": 34
+              },
+              {
+                "desk number": 4,
+                "group x": 87,
+                "group y": 82
+              },
+              {
+                "desk number": 5,
+                "group x": 83,
+                "group y": 79
+              },
+              {
+                "desk number": 6,
+                "group x": 81,
+                "group y": 23
+              },
+              {
+                "desk number": 7,
+                "group x": 85,
+                "group y": 27
+              },
+              {
+                "desk number": 8,
+                "group x": 80,
+                "group y": 84
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

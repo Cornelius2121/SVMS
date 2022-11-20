@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <div class="jumbotron" style="  padding-bottom: 10px;  padding-top: 5px;background-color:rgb(112, 65, 189);opacity: 0.8;color:white;">
+            <div class="d-flex">
+                <div class="p-2">
+                    <i class="fa fa-calendar fa-5x"></i>
+                </div>
+                <div class="p-2 flex-grow-1">
+                    <h1 style="text-align:center;">Tutorial Schedule</h1> 
+                </div>
+            </div>
+            {% with show_group = student_show_group %}
+                {% include 'menu/menu.html' %}
+             {% endwith %}
+              </div>
+    </head>
+    <body>
+        <div class="container" style="position:relative; z-index:-1;color:white;background-color:rgb(112, 65, 189)ange;border-radius: 25px;opacity: 0.8; height: 100%;">
+            <select id="weekSelector" class="form-control">
+            </select>
+            <br>
+            <table class="table table-hover" id="ScheduleTable">
+                <tr id="scheduleHeader">
+                    <th>Round</th>
+                    <th>Vs Group</th>
+                    <th>Table</th>
+                </tr>
+            </table>
+
+        </div>
+              
+    </body>
+    {% include 'menu/footer.html' %}
+    <script>
+        
+        //Put schedule data in below in jsonData
+        var jsonData = '{{ JSONData | safe }}'
+        var JSONObj = JSON.parse(jsonData)
+
+        const tutorialNumber = {{ tutorial_number }};  //Tutorial Number sourced from session tutorialNumber = ${x}
+        const groupNumber = {{ group_number }};  //User group number groupNumber = ${x}
+
+        //Get informtion of a specfic week
+        function getWeek(number){
+            var i;
+            for (i = 0; i < JSONObj.length; ++i) {
+                if(JSONObj[i]["week"]  == number){
+                    return JSONObj[i]
+                }
+            }
+        }
+
+        //Extracts one tutorial from a week
+        function getTutorial(week,number){
+            var i;
+            for (i = 0; i < week["tutorials"].length; ++i) {
+                if(week["tutorials"][i]["tutorial_number"]  == number){
+                    return week["tutorials"][i]
+                }
+            }
+        }
+
+        $(document).ready(function(){
+            
+            
+            let weeks = new Set()
+
+            //Set up week options
+            for(let i=0;i<JSONObj.length;i++){
+                weeks.add(JSONObj[i]["week"]);
+            }
+
+            console.log(weeks)
+
+            weeks.forEach(function(value){
+                $("#weekSelector").append("<option value="+ value +">"+ value +"</option>")
+            })
+
+            $("#weekSelector").change( function(){
+                //Removes previous rows
+                $("#ScheduleTable").find("tr:gt(0)").remove();
+
+                let selectedWeek = $(this).find("option:selected").val()
+                console.log(selectedWeek)
+                let week = getWeek(selectedWeek)
+                let tutorial = getTutorial(week,tutorialNumber);
+                
+                //Debugging
+                console.log(week)
+                console.log(tutorial)
+
+                var newRows = []    //Placeholder for new rows
+
+                //Loop through each round
+                var i;
+                for (i = 0; i < tutorial["rounds"].length; ++i) {
+                    let round = tutorial["rounds"][i];
+                    let roundNumber = round["round"];
+
+                    //Loop through each debate to find deskNumber and vs group
+                    var j;
+                    for (j = 0; j < round["debates"].length; ++j) {
+                        let debate = round["debates"][j]
+
+                        if((debate["group x"] == groupNumber) || (debate["group y"] == groupNumber)){
+                            let vsGroup = debate["group y"];
+                            
+                            //If group y is your group then get the opposing group (group x)
+                            if(debate["group y"] == groupNumber){
+                                vsGroup = debate["group x"];
+                            }
+
+                            //Make a row object
+                            let newRow = {};
+
+                            newRow.roundNumber = roundNumber
+                            newRow.vsGroup = vsGroup
+                            newRow.desk = debate["desk number"]
+
+                            newRows.push(newRow) //Add to newRows
+                            
+                            // DEBUGGING
+                            // console.log("Round "+ roundNumber);
+                            // console.log("Vs Group "+ vsGroup)
+                            // console.log("Desk "+ debate["desk number"])
+                            // console.log(" ")
+                            break;
+                        }
+                    }
+                }
+                
+                //Sort new rows by round number
+                newRows.sort(function(a, b){
+                    return b.roundNumber - a.roundNumber})
+
+                //Insert data into the schedule table
+                var j;
+                for(j=0;j<newRows.length;j++){
+                    let row = newRows[j]
+                    $("#scheduleHeader").after("<tr><td>"+ row.roundNumber +"</td><td>"+ row.vsGroup +"</td><td>"+ row.desk +"</td></tr>")
+                }
+
+            })
+
+            //Set it to last option
+            $('#weekSelector option:last').prop('selected', true);
+
+            //Initalize schedule table
+            $("#weekSelector").change();
+        })
+    </script>
+</html>

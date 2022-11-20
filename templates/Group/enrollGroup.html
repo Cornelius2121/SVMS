@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex">
+
+         <!-- Latest compiled and minified CSS -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+         <!-- jQuery library -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+         <!-- Popper JS -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 
+         <!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        {% include 'menu.html' %}
+          <div class="jumbotron" style="  padding-bottom: 5px;  padding-top: 5px;background-color:yellow;opacity: 0.8;color:white;">
+            <div class="row">
+                <div class="col-sm">
+                    <i class="fas fa-comments fa-5x"></i>
+                </div>
+                <div class="col-sm">
+                    <h1 style="text-align:center;padding-top: 25px;padding-bottom: 10px;">Groups</h1> 
+                </div>
+                <div class="col-sm"></div>
+            </div>
+        </div>
+        <div class="container" style="color:white;background-color:orange;border-radius: 25px;opacity: 0.8; height: 100%;">
+            <h3>Group Listing</h3>
+            <br>
+            <h4>Group X</h4>
+            <table class="table">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Smith</td>
+                </tr>
+            </table>
+            <br>
+            <h3>Enroll into a group</h3>
+           <table class="table">
+               <tr>
+                   <th>Select Group</th>
+                   <th>Confirm Selection</th>
+                   <th>Join Group</th>
+               </tr>
+               <tr>
+                   <td>
+                        <select class="form-control">
+                            <option value="1">Group 1</option>
+                            <option value="2">Group 2</option>
+                            <option value="3">Group 3</option>
+                            <option value="new">Create New Group</option>
+                        </select>
+                   </td>
+                   <td>
+                        <div class="checkbox">
+                            <label><input id="confirmJoin" type="checkbox" value=""></label>
+                      </div>
+                    </td>
+                    <td>
+                        <button disabled id="joinBtn" class="btn btn-info" style="text-align: center;">Join</button>
+                    </td>
+                </tr>
+           </table>
+        </div>
+    </body>
+    <script>
+        $(document).ready(function() {
+            $("#confirmJoin").change(function() {
+                if(this.checked) {
+                    $("#joinBtn").attr("disabled",false)
+                }else{
+                    $("#joinBtn").attr("disabled",true)
+                }
+            });
+
+        });
+    </script>
+</html>
