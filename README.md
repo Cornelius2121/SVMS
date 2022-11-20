@@ -34,21 +34,19 @@ from `AdminFileUploadHelper.py`. This method has the following functionality:
 
 # Development Installation
 
-Development of the MECH1750 Server is only currently tested on the Windows operating system.
+Development of the SVMS Server is only currently tested on the Windows operating system.
 
 ## Windows
 
-In order to install and initialise a development environment for the MECH1750 server, the below procedure can be
+In order to install and initialise a development environment for the SVMS server, the below procedure can be
 followed:
 
 - Clone the git repository
 - Install PostgreSQL
-- Create an empty database called `mech1750`
+- Create an empty database called `svms`
 - Create a custom PostgreSQL user
 - Install the latest version of the [ODBC drivers](https://www.postgresql.org/ftp/odbc/versions/msi/)
 - Duplicate `config.sample.py` and rename to `config.py` and populate.
 - Set the `ODBC_DRIVER` field to `PostgreSQL Unicode`
-- Run `psql -U corne -d mech1750 < mech1750_s2_21.sql` from the directory`/DatabaseScripts/2021_Semester_2_Data` in
-  order to restore a full semesters' data.
 
 <a href="https://www.flaticon.com/free-icons/iron" title="iron icons">Iron icons created by Smashicons - Flaticon</a>
