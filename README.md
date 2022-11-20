@@ -49,4 +49,3 @@ followed:
 - Duplicate `config.sample.py` and rename to `config.py` and populate.
 - Set the `ODBC_DRIVER` field to `PostgreSQL Unicode`
 
-<a href="https://www.flaticon.com/free-icons/iron" title="iron icons">Iron icons created by Smashicons - Flaticon</a>
