@@ -49,3 +49,8 @@ followed:
 - Duplicate `config.sample.py` and rename to `config.py` and populate.
 - Set the `ODBC_DRIVER` field to `PostgreSQL Unicode`
 
+# Citation
+If you have used our application for research purposes, please consider citing:
+
+[C. Paardekooper, J. Flynn, A. Kirkland, D. Cuskelly, A. Gregg, Facilitating Scalable Vivas through Purpose-Built Software, in The 33rd Annual Conference of the Australasian Association for Engineering Education (AAEE 2022)](http://hdl.handle.net/1959.13/1466952) 
+
